@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Petal Co. — Silk Floral Installations</title>
+  <meta name="description" content="Grand Petal Co. creates large-scale, handcrafted silk floral installations for corporate interiors, hospitality spaces, and long-term care communities across Ontario.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F5F0EB; --black: #1A1A1A; --gold: #C4A96A;
+      --gold-dark: #8B7355; --body: #4A4A4A; --grey: #C4B49A;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); font-weight: 300; background: var(--cream); color: var(--body); overflow-x: hidden; }
+    body::after {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 900;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      opacity: 0.45;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 2rem 4rem;
+      transition: background 0.5s ease, padding 0.4s ease, border-color 0.5s ease;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled {
+      background: rgba(245,240,235,0.96); backdrop-filter: blur(12px);
+      padding: 1.25rem 4rem; border-color: rgba(196,169,106,0.18);
+    }
+    .nav-logo {
+      font-family: var(--serif); font-weight: 300; font-size: 1.05rem;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream);
+      text-decoration: none; transition: color 0.5s ease;
+    }
+    nav.scrolled .nav-logo { color: var(--black); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(245,240,235,0.85); text-decoration: none;
+      position: relative; padding-bottom: 3px; transition: color 0.5s ease;
+    }
+    nav.scrolled .nav-links a { color: var(--body); }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 1px; background: var(--gold); transition: width 0.35s ease;
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* HERO */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 4rem 5rem; overflow: hidden;
+    }
+    .hero-media { position: absolute; inset: 0; z-index: 0; }
+    .hero-media video, .hero-media img.hero-fallback {
+      width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(26,26,26,0.72) 0%, rgba(26,26,26,0.48) 55%, rgba(26,26,26,0.18) 100%);
+    }
+    .hero-line {
+      position: absolute; top: 20%; right: 4rem; width: 1px; height: 30vh;
+      background: linear-gradient(to bottom, transparent, rgba(196,169,106,0.5), transparent); z-index: 1;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 680px; }
+    .hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.75rem; }
+    .hero-headline {
+      font-family: var(--serif); font-style: italic; font-weight: 300;
+      font-size: clamp(3.25rem, 7.5vw, 7.5rem); line-height: 1.06;
+      color: var(--cream); margin-bottom: 2.25rem; letter-spacing: -0.01em;
+    }
+    .hero-sub { font-size: 0.88rem; line-height: 1.9; letter-spacing: 0.02em; color: rgba(245,240,235,0.8); max-width: 44ch; margin-bottom: 3rem; }
+    .link-arrow { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; padding-bottom: 3px; transition: opacity 0.3s; }
+    .link-arrow:hover { opacity: 0.7; }
+    .link-arrow-light { color: var(--cream); border-bottom: 1px solid rgba(196,169,106,0.7); }
+    .link-arrow-dark  { color: var(--black); border-bottom: 1px solid var(--gold); }
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; right: 4rem; font-size: 0.6rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: rgba(245,240,235,0.5); writing-mode: vertical-rl; z-index: 1;
+    }
+    .hero-logo-mark {
+      width: 90px; height: 90px; object-fit: cover; object-position: center top;
+      mix-blend-mode: screen; margin-bottom: 1.5rem; display: block;
+      opacity: 0.92;
+    }
+    .footer-logo-img {
+      height: 72px; width: auto; display: block; opacity: 0.88;
+      transition: opacity 0.3s;
+    }
+    .footer-logo-img:hover { opacity: 1; }
+
+    /* SHARED */
+    section { padding: 8rem 4rem; }
+    .section-label { font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 2rem; }
+    .two-col { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 7rem; align-items: start; }
+    .section-heading { font-family: var(--serif); font-weight: 300; font-size: clamp(1.9rem, 3.5vw, 3rem); line-height: 1.2; color: var(--black); margin-bottom: 2.25rem; }
+    .body-text { font-size: 0.88rem; line-height: 2; color: var(--body); margin-bottom: 1.5rem; }
+    .detail-text { font-size: 0.75rem; letter-spacing: 0.07em; color: var(--grey); line-height: 1.9; }
+    .thin-rule { width: 36px; height: 1px; background: var(--gold); margin-bottom: 2rem; }
+
+    /* COLLECTIONS */
+    #collections { padding-top: 0; }
+    .collections-header { max-width: 1100px; margin: 0 auto 4.5rem; }
+    .collections-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .card {
+      position: relative; overflow: hidden; cursor: pointer;
+      aspect-ratio: 3/4; background-size: cover; background-position: center;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .card:last-child { grid-column: 1 / -1; aspect-ratio: 21/8; }
+    .card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,26,26,0.88) 0%, rgba(26,26,26,0.35) 45%, rgba(26,26,26,0.05) 100%);
+      transition: background 0.45s ease; z-index: 1;
+    }
+    .card:hover { transform: scale(1.015); }
+    .card:hover::before { background: linear-gradient(to top, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.55) 55%, rgba(26,26,26,0.15) 100%); }
+    .card-inner { position: absolute; bottom: 0; left: 0; right: 0; padding: 2.5rem 2.25rem; z-index: 2; }
+    .card-num { font-family: var(--serif); font-style: italic; font-size: 0.78rem; color: var(--gold); display: block; margin-bottom: 0.75rem; }
+    .card-title { font-family: var(--serif); font-weight: 300; font-size: 1.35rem; color: var(--cream); line-height: 1.25; margin-bottom: 0.75rem; }
+    .card-brief { font-size: 0.76rem; line-height: 1.75; color: rgba(245,240,235,0.7); margin-bottom: 1.25rem; max-width: 38ch; }
+    .card-cta { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); opacity: 0; transform: translateY(6px); transition: opacity 0.35s ease, transform 0.35s ease; }
+    .card:hover .card-cta { opacity: 1; transform: translateY(0); }
+
+    /* DARK */
+    .dark { background: var(--black); }
+    .dark .section-label { color: var(--gold); }
+    .dark .section-heading { color: var(--cream); }
+    .serve-list { list-style: none; }
+    .serve-item { display: flex; gap: 1.75rem; align-items: flex-start; padding: 1.75rem 0; border-bottom: 1px solid rgba(196,180,154,0.18); }
+    .serve-item:first-child { border-top: 1px solid rgba(196,180,154,0.18); }
+    .serve-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; margin-top: 0.55rem; flex-shrink: 0; }
+    .serve-title { font-family: var(--serif); font-size: 1.15rem; color: var(--cream); display: block; margin-bottom: 0.35rem; }
+    .serve-desc { font-size: 0.77rem; color: rgba(196,180,154,0.65); line-height: 1.8; }
+
+    /* CRAFT */
+    .craft-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr; gap: 7rem; align-items: center; }
+    .craft-image { aspect-ratio: 3/4; overflow: hidden; }
+    .craft-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+
+    /* FORM */
+    .form-section { background: var(--black); padding: 8rem 4rem; }
+    .form-section .section-label { color: var(--gold); }
+    .form-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.6fr; gap: 7rem; align-items: start; }
+    .form-heading { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(2rem, 4vw, 3.5rem); color: var(--cream); line-height: 1.15; margin-bottom: 1.5rem; }
+    .form-sub { font-size: 0.82rem; line-height: 1.9; color: rgba(196,180,154,0.65); }
+    .availability-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; }
+    .field { position: relative; margin-bottom: 2rem; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { display: block; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .field input, .field select, .field textarea {
+      width: 100%; background: transparent; border: none;
+      border-bottom: 1px solid rgba(196,169,106,0.25);
+      padding: 0.6rem 0; font-family: var(--sans); font-weight: 300;
+      font-size: 0.85rem; color: var(--cream); outline: none;
+      transition: border-color 0.3s ease; -webkit-appearance: none; appearance: none; border-radius: 0;
+    }
+    .field select { cursor: pointer; }
+    .field select option { background: var(--black); color: var(--cream); }
+    .field input::placeholder, .field textarea::placeholder { color: rgba(245,240,235,0.25); }
+    .field input:focus, .field select:focus, .field textarea:focus { border-bottom-color: var(--gold); }
+    .field textarea { resize: none; height: 100px; line-height: 1.8; }
+    .form-submit { grid-column: 1 / -1; margin-top: 1rem; }
+    .btn {
+      display: inline-block; font-family: var(--sans); font-weight: 400;
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--cream); background: transparent;
+      border: 1px solid rgba(196,169,106,0.4);
+      padding: 1.15rem 2.75rem; cursor: pointer;
+      transition: background 0.35s ease, border-color 0.35s ease; text-decoration: none;
+    }
+    .btn:hover { background: rgba(196,169,106,0.12); border-color: var(--gold); }
+    .form-note { font-size: 0.72rem; color: rgba(196,180,154,0.4); margin-top: 1.5rem; line-height: 1.7; grid-column: 1 / -1; }
+
+    /* FOOTER */
+    footer {
+      background: var(--black); color: rgba(245,240,235,0.35);
+      padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.7rem; letter-spacing: 0.08em; border-top: 1px solid rgba(196,169,106,0.1);
+    }
+    .footer-logo { font-family: var(--serif); font-weight: 300; font-size: 0.95rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,240,235,0.75); text-decoration: none; }
+    .footer-links { display: flex; gap: 2rem; align-items: center; }
+    footer a { color: rgba(245,240,235,0.35); text-decoration: none; transition: color 0.3s; }
+    footer a:hover { color: var(--gold); }
+    .instagram-link { display: flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; letter-spacing: 0.12em; }
+    .instagram-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.5; flex-shrink: 0; }
+
+    /* MODAL */
+    .modal { position: fixed; inset: 0; z-index: 600; display: flex; align-items: center; justify-content: center; padding: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+    .modal.active { opacity: 1; pointer-events: all; }
+    .modal-backdrop { position: absolute; inset: 0; background: rgba(26,26,26,0.88); backdrop-filter: blur(6px); }
+    .modal-box { position: relative; width: 100%; max-width: 1060px; max-height: 88vh; background: var(--cream); display: grid; grid-template-columns: 1.1fr 1fr; overflow: hidden; transform: translateY(24px); transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .modal.active .modal-box { transform: translateY(0); }
+    .modal-image { overflow: hidden; max-height: 88vh; }
+    .modal-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .modal-content { padding: 3.5rem 3rem 3rem; overflow-y: auto; display: flex; flex-direction: column; }
+    .modal-close { position: absolute; top: 1.25rem; right: 1.25rem; background: none; border: none; font-size: 1.75rem; color: var(--cream); cursor: pointer; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; z-index: 10; opacity: 0.7; transition: opacity 0.3s; font-family: var(--serif); font-weight: 300; line-height: 1; }
+    .modal-close:hover { opacity: 1; }
+    .modal-num { font-family: var(--serif); font-style: italic; font-size: 0.8rem; color: var(--gold); display: block; margin-bottom: 0.6rem; }
+    .modal-title { font-family: var(--serif); font-weight: 300; font-size: 2rem; color: var(--black); line-height: 1.2; margin-bottom: 1.75rem; }
+    .modal-detail { font-size: 0.84rem; line-height: 2; color: var(--body); margin-bottom: 2rem; flex: 1; }
+    .modal-specs { list-style: none; margin-bottom: 2.5rem; border-top: 1px solid rgba(196,169,106,0.2); padding-top: 1.5rem; }
+    .modal-specs li { font-size: 0.73rem; letter-spacing: 0.06em; color: var(--gold-dark); padding: 0.4rem 0; border-bottom: 1px solid rgba(196,169,106,0.12); display: flex; gap: 0.75rem; align-items: center; }
+    .modal-specs li::before { content: ''; width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+    .btn-dark { background: var(--black); color: var(--cream); border: none; display: inline-block; font-family: var(--sans); font-weight: 400; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.1rem 2.5rem; cursor: pointer; text-decoration: none; transition: background 0.35s ease; align-self: flex-start; }
+    .btn-dark:hover { background: var(--gold-dark); }
+
+    /* ANIMATIONS */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.85s ease, transform 0.85s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal.d1 { transition-delay: 0.12s; }
+    .reveal.d2 { transition-delay: 0.24s; }
+    .reveal.d3 { transition-delay: 0.36s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      nav, nav.scrolled { padding: 1.5rem 2rem; }
+      .nav-links { display: none; }
+      .hero { padding: 0 2rem 4rem; }
+      section { padding: 5rem 2rem; }
+      .two-col, .craft-grid, .form-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .craft-image { max-height: 65vw; aspect-ratio: unset; }
+      .collections-grid { grid-template-columns: 1fr 1fr; }
+      .card:last-child { grid-column: 1 / -1; aspect-ratio: 16/9; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem; }
+      .form-section { padding: 5rem 2rem; }
+      .availability-form { grid-template-columns: 1fr; }
+      .hero-line { display: none; }
+    }
+    @media (max-width: 560px) {
+      .collections-grid { grid-template-columns: 1fr; }
+      .card:last-child { aspect-ratio: 4/5; }
+      .modal { padding: 0; }
+      .modal-box { grid-template-columns: 1fr; max-height: 100vh; }
+      .modal-image { max-height: 45vh; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="nav">
+    <a class="nav-logo" href="/">Grand Petal Co.</a>
+    <ul class="nav-links">
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#serve">Who We Work With</a></li>
+      <li><a href="#craft">The Craft</a></li>
+      <li><a href="#inquire">Check Availability</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-media">
+      <video autoplay muted loop playsinline poster="img/hero.jpg">
+        <source src="img/hero-video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-line"></div>
+    <div class="hero-content">
+      <img src="img/logo.jpg" alt="Grand Petal Co." class="hero-logo-mark reveal">
+      <p class="hero-eyebrow reveal">Kitchener–Waterloo–Cambridge · Ontario</p>
+      <h1 class="hero-headline reveal d1">The art of<br>the permanent<br>garden</h1>
+      <p class="hero-sub reveal d2">Handcrafted silk floral installations of exceptional scale — designed for corporate interiors, hospitality spaces, and long-term care communities.</p>
+      <a href="#inquire" class="link-arrow link-arrow-light reveal d3">Check availability</a>
+    </div>
+    <span class="hero-scroll" aria-hidden="true">Scroll</span>
+  </section>
+
+  <!-- STATEMENT -->
+  <section>
+    <div class="two-col">
+      <div class="reveal">
+        <p class="section-label">The Work</p>
+        <div class="thin-rule"></div>
+        <p class="detail-text">Each installation is hand-crafted from premium organza silk, rising seven to eight feet on modular, moss-covered bases — designed to endure.</p>
+      </div>
+      <div class="reveal d1">
+        <h2 class="section-heading">Not floristry.<br>Not décor.<br>Floral architecture.</h2>
+        <p class="body-text">Grand Petal Co. brings a standard of permanence and craftsmanship to large-scale floral design that the interiors industry has long overlooked. Our installations do not wilt, require no maintenance, and carry no allergy risk — only the sustained presence of something genuinely beautiful.</p>
+        <p class="body-text">Every piece is conceived as a permanent feature of its space — a sculptural element with the scale and intention of a commissioned work of art.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section id="collections">
+    <div class="collections-header">
+      <p class="section-label reveal">The Collections</p>
+      <h2 class="section-heading reveal d1" style="max-width: 20ch;">Seven named collections, each a distinct world.</h2>
+    </div>
+    <div class="collections-grid">
+      <div class="card reveal" style="background-image:url('img/garden-reverie.jpg')" data-collection="0">
+        <div class="card-inner">
+          <span class="card-num">I</span>
+          <h3 class="card-title">The Garden Reverie</h3>
+          <p class="card-brief">Abundant and serene — a curated English-garden palette in full, unhurried bloom.</p>
+          <span class="card-cta">View details →</span>
+        </div>
+      </div>
+      <div class="card reveal d1" style="background-image:url('img/wildflower-meadow.jpg')" data-collection="1">
+        <div class="card-inner">
+          <span class="card-num">II</span>
+          <h3 class="card-title">The Wildflower Meadow</h3>
+          <p class="card-brief">Organic movement and quiet colour, designed to soften even the most formal interior.</p>
+          <span class="card-cta">View details →</span>
+        </div>
+      </div>
+      <div class="card reveal d2" style="background-image:url('img/moody-garden.jpg')" data-collection="2">
+        <div class="card-inner">
+          <span class="card-num">III</span>
+          <h3 class="card-title">The Moody Garden</h3>
+          <p class="card-brief">Deep, considered tones. For spaces that command attention and reward a second look.</p>
+          <span class="card-cta">View details →</span>
+        </div>
+      </div>
+      <div class="card reveal" style="background-image:url('img/lavender-reverie.jpg')" data-collection="3">
+        <div class="card-inner">
+          <span class="card-num">IV</span>
+          <h3 class="card-title">The Lavender Reverie</h3>
+          <p class="card-brief">A study in calm — soft violet hues and silver sage, with exceptional density.</p>
+          <span class="card-cta">View details →</span>
+        </div>
+      </div>
+      <div class="card reveal d1" style="background-image:url('img/grand-blanc.jpg');background-position:top center" data-collection="4">
+        <div class="card-inner">
+          <span class="card-num">V</span>
+          <h3 class="card-title">The Grand Blanc</h3>
+          <p class="card-brief">All white. Perfectly architectural. The signature piece for landmark lobbies and institutions.</p>
+          <span class="card-cta">View details →</span>
+        </div>
+      </div>
+      <div class="card reveal d2" style="background-image:url('img/golden-grove.jpg')" data-collection="5">
+        <div class="card-inner">
+          <span class="card-num">VI</span>
+          <h3 class="card-title">The Golden Grove</h3>
+          <p class="card-brief">Warm amber, honey, and gold — built for rich wood, marble, and warm light.</p>
+          <span class="card-cta">View details →</span>
+        </div>
+      </div>
+      <div class="card reveal" style="background-image:url('img/full-bloom.jpg');background-position:center 30%" data-collection="6">
+        <div class="card-inner">
+          <span class="card-num">VII</span>
+          <h3 class="card-title">The Full Bloom Collection</h3>
+          <p class="card-brief">Our most complete expression — maximalist in scale, deliberate in craft. Reserved for spaces that ask for the extraordinary.</p>
+          <span class="card-cta">View details →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section class="dark" id="serve">
+    <div class="two-col">
+      <div class="reveal">
+        <p class="section-label">Who We Work With</p>
+        <div class="thin-rule" style="background:rgba(196,169,106,0.4)"></div>
+        <h2 class="section-heading" style="font-size:clamp(1.75rem,3vw,2.5rem)">Spaces that are seen, every day, by many.</h2>
+      </div>
+      <ul class="serve-list reveal d1">
+        <li class="serve-item">
+          <span class="serve-dot"></span>
+          <div>
+            <span class="serve-title">Long-Term Care Communities</span>
+            <span class="serve-desc">Beauty that is hypoallergenic, maintenance-free, and meaningfully present for residents and families every day of the year.</span>
+          </div>
+        </li>
+        <li class="serve-item">
+          <span class="serve-dot"></span>
+          <div>
+            <span class="serve-title">Corporate Offices</span>
+            <span class="serve-desc">Lobby and atrium installations that communicate culture, craft, and considered taste to clients and staff alike.</span>
+          </div>
+        </li>
+        <li class="serve-item">
+          <span class="serve-dot"></span>
+          <div>
+            <span class="serve-title">Hospitality &amp; Event Venues</span>
+            <span class="serve-desc">A permanent installation that transforms a space without the cost or logistics of fresh floristry for every event.</span>
+          </div>
+        </li>
+        <li class="serve-item">
+          <span class="serve-dot"></span>
+          <div>
+            <span class="serve-title">Universities &amp; Institutions</span>
+            <span class="serve-desc">Dignified, enduring presence in common areas, libraries, and reception spaces — scaled to architecture.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- THE CRAFT -->
+  <section id="craft">
+    <div class="craft-grid">
+      <div class="reveal">
+        <p class="section-label">The Craft</p>
+        <div class="thin-rule"></div>
+        <h2 class="section-heading">Made by hand.<br>Built to last.</h2>
+        <p class="body-text">Every flower in every Grand Petal Co. installation is shaped by hand from premium organza silk — a material chosen for its translucency, movement, and its ability to hold the quality of light that real petals do.</p>
+        <p class="body-text">Installations are mounted on custom modular bases finished in natural moss, designed to integrate with architectural flooring of any kind. Each can be reconfigured, relocated, or expanded as your space evolves.</p>
+        <p class="body-text">There are no allergens. No maintenance. No replacements. Only an enduring work of craft, present for every person who moves through your space.</p>
+        <p class="detail-text" style="margin-top:1rem">Primary service area: Kitchener–Waterloo–Cambridge, Ontario. Extended service available throughout Ontario — travel and installation fees apply.</p>
+      </div>
+      <div class="craft-image reveal d1">
+        <img src="img/craft-detail.jpg" alt="Grand Petal Co. silk floral installation detail — blush and coral">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <!-- To activate form submissions: sign up at formspree.io, create a form, and replace YOUR_FORM_ID below -->
+  <section class="form-section" id="inquire">
+    <div class="form-inner">
+      <div class="reveal">
+        <p class="section-label">Check Availability</p>
+        <h2 class="form-heading">Let us design<br>for your space.</h2>
+        <p class="form-sub">We work with a small number of clients at a time. Tell us about your space and we will be in touch within two business days.</p>
+      </div>
+      <div class="reveal d1">
+        <form class="availability-form" action="https://formspree.io/f/xojrgpek" method="POST">
+          <div class="field">
+            <label for="f-name">Full Name</label>
+            <input id="f-name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="f-org">Organization</label>
+            <input id="f-org" name="organization" type="text" placeholder="Company or facility name" required>
+          </div>
+          <div class="field">
+            <label for="f-email">Email Address</label>
+            <input id="f-email" name="email" type="email" placeholder="hello@yourorganization.com" required>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" placeholder="(000) 000-0000">
+          </div>
+          <div class="field">
+            <label for="f-space">Space Type</label>
+            <select id="f-space" name="space_type">
+              <option value="" disabled selected>Select your space</option>
+              <option value="ltc">Long-Term Care Community</option>
+              <option value="corporate">Corporate Office</option>
+              <option value="venue">Hospitality or Event Venue</option>
+              <option value="university">University or Institution</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-collection">Collection of Interest</label>
+            <select id="f-collection" name="collection">
+              <option value="" disabled selected>Select a collection</option>
+              <option>The Garden Reverie</option>
+              <option>The Wildflower Meadow</option>
+              <option>The Moody Garden</option>
+              <option>The Lavender Reverie</option>
+              <option>The Grand Blanc</option>
+              <option>The Golden Grove</option>
+              <option>The Full Bloom Collection</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-timeline">Preferred Timeline</label>
+            <input id="f-timeline" name="timeline" type="text" placeholder="e.g. Summer 2026, ASAP, Flexible">
+          </div>
+          <div class="field">
+            <label for="f-location">Space Location</label>
+            <input id="f-location" name="location" type="text" placeholder="City, Ontario">
+          </div>
+          <div class="field full">
+            <label for="f-details">Tell us about your space</label>
+            <textarea id="f-details" name="details" placeholder="Describe the space, approximate dimensions, and what you're hoping to achieve."></textarea>
+          </div>
+          <div class="form-submit full">
+            <button type="submit" class="btn">Send Inquiry</button>
+          </div>
+          <p class="form-note">We respond within two business days. All inquiries are treated with discretion.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="/" aria-label="Grand Petal Co.">
+      <img src="img/logo.jpg" alt="Grand Petal Co." class="footer-logo-img">
+    </a>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/grandpetalco/" target="_blank" rel="noopener" class="instagram-link" aria-label="Grand Petal Co. on Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+        </svg>
+        @grandpetalco
+      </a>
+      <a href="mailto:hello@grandpetalco.ca">hello@grandpetalco.ca</a>
+    </div>
+    <span>© 2026 Grand Petal Co. All rights reserved.</span>
+  </footer>
+
+  <!-- COLLECTION MODAL -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-box">
+      <div class="modal-image">
+        <img src="" alt="" id="modal-img">
+      </div>
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+        <span class="modal-num" id="modal-num"></span>
+        <h2 class="modal-title" id="modal-title"></h2>
+        <p class="modal-detail" id="modal-detail"></p>
+        <ul class="modal-specs" id="modal-specs"></ul>
+        <a href="#inquire" class="btn-dark" id="modal-cta">Check Availability</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const collections = [
+      { num:'I',   name:'The Garden Reverie',       img:'img/garden-reverie.jpg',
+        detail:'The Garden Reverie captures the spirit of an English walled garden at its most abundant — layers of blush, rose, ivory, and sage in a composition that rewards time spent with it. Each stem is hand-shaped to suggest natural, unhurried growth. The result is a space that feels genuinely alive, without the maintenance of anything living.',
+        specs:['Height: 7–8 ft on modular moss base','Width: 3–4 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+      { num:'II',  name:'The Wildflower Meadow',    img:'img/wildflower-meadow.jpg',
+        detail:'The Wildflower Meadow brings the feeling of open countryside into controlled architectural spaces. Yellow, blush, pink, and white — rendered in translucent organza silk — move with the air and hold light the way real wildflowers do. Designed to soften lobbies, reception areas, and corridors without competing with them.',
+        specs:['Height: 7–8 ft on modular moss base','Width: 3–5 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+      { num:'III', name:'The Moody Garden',         img:'img/moody-garden.jpg',
+        detail:'The Moody Garden is our most dramatic collection — rich coral, terracotta, and deep rose, balanced by ivory and sage. Designed for spaces that are not shy. Boardrooms, statement lobbies, and venues where the installation is meant to be noticed. Not decoration. A centrepiece.',
+        specs:['Height: 7–8 ft on modular moss base','Width: 3–4 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+      { num:'IV',  name:'The Lavender Reverie',     img:'img/lavender-reverie.jpg',
+        detail:'The Lavender Reverie was designed with long-term care and wellness environments in mind — spaces where the emotional quality of light and colour matters. Soft lavender, blush, and ivory in a dense, enveloping arrangement that brings genuine warmth to any room. Hypoallergenic by design. Calming by nature.',
+        specs:['Height: 7–8 ft on modular moss base','Width: 3–5 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+      { num:'V',   name:'The Grand Blanc',          img:'img/grand-blanc.jpg',
+        detail:'The Grand Blanc is restraint taken to its most complete expression. Pure white organza silk — built to the same scale and density as our full collections. The result reads differently in every light: cream in afternoon warmth, luminous under cool overheads, almost sculptural under evening lighting. For spaces that need nothing more than one perfect thing.',
+        specs:['Height: 7–8 ft on modular moss base','Width: 3–4 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+      { num:'VI',  name:'The Golden Grove',         img:'img/golden-grove.jpg',
+        detail:'The Golden Grove was built for interiors that already have presence — rich wood panelling, marble lobbies, warm hospitality lighting. The yellow silk holds light in a way that reads as genuinely warm, even architectural. A single installation transforms the temperature of an entire room.',
+        specs:['Height: 7–8 ft on modular moss base','Width: 2–4 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+      { num:'VII', name:'The Full Bloom Collection', img:'img/full-bloom.jpg',
+        detail:'The Full Bloom Collection is everything Grand Petal Co. makes, at once. Every variety, every technique — arranged in a composition designed to stop people. Reserved for spaces ready for something extraordinary: atria, grand event halls, landmark reception spaces. Each installation is custom-composed for the space it will inhabit.',
+        specs:['Height: 7–8 ft on modular moss base','Width: 5–8 ft (fully custom)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Custom composition — each piece unique','Available for purchase or rental'] }
+    ];
+
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive:true });
+
+    // Reveal on scroll
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    setTimeout(() => {
+      document.querySelectorAll('.hero .reveal').forEach((el, i) => setTimeout(() => el.classList.add('visible'), i * 160));
+    }, 200);
+
+    // Modal
+    const modal    = document.getElementById('modal');
+    const backdrop = document.getElementById('modal-backdrop');
+    const closeBtn = document.getElementById('modal-close');
+
+    function openModal(i) {
+      const c = collections[i];
+      document.getElementById('modal-img').src        = c.img;
+      document.getElementById('modal-img').alt        = c.name;
+      document.getElementById('modal-num').textContent   = c.num;
+      document.getElementById('modal-title').textContent = c.name;
+      document.getElementById('modal-detail').textContent= c.detail;
+      document.getElementById('modal-specs').innerHTML   = c.specs.map(s => `<li>${s}</li>`).join('');
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.card[data-collection]').forEach(card => {
+      card.addEventListener('click', () => openModal(parseInt(card.dataset.collection)));
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    document.getElementById('modal-cta').addEventListener('click', () => {
+      closeModal();
+      setTimeout(() => document.getElementById('inquire').scrollIntoView({ behavior:'smooth' }), 300);
+    });
+  </script>
+</body>
+</html>
