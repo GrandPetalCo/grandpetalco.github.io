@@ -1,1394 +1,642 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grand Petal Co. — Large-Scale Floral Installations</title>
-  <meta name="description" content="Grand Petal Co. creates large-scale handcrafted silk floral installations for corporate events, weddings, and special occasions in Kitchener-Waterloo-Cambridge and surrounding areas." />
-
-  <!-- ── FAVICON: Architectural Bloom Mark ── -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' fill='%23F5F0EB'/%3E%3Cellipse cx='40' cy='40' rx='8' ry='22' fill='%23C4A96A' opacity='.22' transform='rotate(0 40 40)'/%3E%3Cellipse cx='40' cy='40' rx='8' ry='22' fill='%23C4A96A' opacity='.22' transform='rotate(45 40 40)'/%3E%3Cellipse cx='40' cy='40' rx='8' ry='22' fill='%23C4A96A' opacity='.22' transform='rotate(90 40 40)'/%3E%3Cellipse cx='40' cy='40' rx='8' ry='22' fill='%23C4A96A' opacity='.22' transform='rotate(135 40 40)'/%3E%3Cellipse cx='40' cy='40' rx='5.5' ry='16' fill='%23C4A96A' opacity='.85' transform='rotate(0 40 40)'/%3E%3Cellipse cx='40' cy='40' rx='5.5' ry='16' fill='%23C4A96A' opacity='.85' transform='rotate(45 40 40)'/%3E%3Cellipse cx='40' cy='40' rx='5.5' ry='16' fill='%23C4A96A' opacity='.85' transform='rotate(90 40 40)'/%3E%3Cellipse cx='40' cy='40' rx='5.5' ry='16' fill='%23C4A96A' opacity='.85' transform='rotate(135 40 40)'/%3E%3Ccircle cx='40' cy='40' r='6' fill='%238B7355'/%3E%3Ccircle cx='40' cy='40' r='3' fill='%23C4A96A' opacity='.7'/%3E%3C/svg%3E" />
-  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' fill='%23F5F0EB'/%3E%3Cellipse cx='40' cy='40' rx='8' ry='22' fill='%23C4A96A' opacity='.22' transform='rotate(0 40 40)'/%3E%3Cellipse cx='40' cy='40' rx='8' ry='22' fill='%23C4A96A' opacity='.22' transform='rotate(45 40 40)'/%3E%3Cellipse cx='40' cy='40' rx='8' ry='22' fill='%23C4A96A' opacity='.22' transform='rotate(90 40 40)'/%3E%3Cellipse cx='40' cy='40' rx='8' ry='22' fill='%23C4A96A' opacity='.22' transform='rotate(135 40 40)'/%3E%3Cellipse cx='40' cy='40' rx='5.5' ry='16' fill='%23C4A96A' opacity='.85' transform='rotate(0 40 40)'/%3E%3Cellipse cx='40' cy='40' rx='5.5' ry='16' fill='%23C4A96A' opacity='.85' transform='rotate(45 40 40)'/%3E%3Cellipse cx='40' cy='40' rx='5.5' ry='16' fill='%23C4A96A' opacity='.85' transform='rotate(90 40 40)'/%3E%3Cellipse cx='40' cy='40' rx='5.5' ry='16' fill='%23C4A96A' opacity='.85' transform='rotate(135 40 40)'/%3E%3Ccircle cx='40' cy='40' r='6' fill='%238B7355'/%3E%3Ccircle cx='40' cy='40' r='3' fill='%23C4A96A' opacity='.7'/%3E%3C/svg%3E" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Petal Co. — Silk Floral Installations</title>
+  <meta name="description" content="Grand Petal Co. creates large-scale, handcrafted silk floral installations for corporate interiors, hospitality spaces, and long-term care communities across Ontario.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
   <style>
-    /* ── VARIABLES ─────────────────────────────────────── */
-    :root {
-      --cream:      #F5F0EB;
-      --cream-dark: #EDE6DC;
-      --black:      #1A1A1A;
-      --gold:       #C4A96A;
-      --gold-brown: #8B7355;
-      --body:       #4A4A4A;
-      --warm-grey:  #C4B49A;
-      --white:      #FDFAF7;
-
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'Jost', sans-serif;
-
-      --max-w: 1180px;
-      --section-pad: 110px 24px;
-    }
-
-    /* ── RESET ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #F5F0EB; --black: #1A1A1A; --gold: #C4A96A;
+      --gold-dark: #8B7355; --body: #4A4A4A; --grey: #C4B49A;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', sans-serif;
+    }
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--cream);
-      color: var(--body);
-      font-family: var(--font-body);
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-    img { display: block; width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    ul { list-style: none; }
-    button { cursor: pointer; border: none; background: none; font-family: var(--font-body); }
-
-    /* ── UTILITY ────────────────────────────────────────── */
-    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
-    .gold-rule {
-      display: block;
-      width: 48px;
-      height: 1px;
-      background: var(--gold);
-      margin: 0 auto 28px;
-    }
-    .gold-rule--left { margin-left: 0; }
-    .label {
-      font-family: var(--font-body);
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--gold-brown);
+    body { font-family: var(--sans); font-weight: 300; background: var(--cream); color: var(--body); overflow-x: hidden; }
+    body::after {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 900;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      opacity: 0.45;
     }
 
-    /* ── SCROLL REVEAL ──────────────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .reveal-delay-1 { transition-delay: .1s; }
-    .reveal-delay-2 { transition-delay: .2s; }
-    .reveal-delay-3 { transition-delay: .3s; }
-    .reveal-delay-4 { transition-delay: .4s; }
-    .reveal-delay-5 { transition-delay: .5s; }
-    .reveal-delay-6 { transition-delay: .6s; }
-
-    /* ── NAV ────────────────────────────────────────────── */
+    /* NAV */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 22px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background .4s ease, box-shadow .4s ease, padding .4s ease;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 2rem 4rem;
+      transition: background 0.5s ease, padding 0.4s ease, border-color 0.5s ease;
+      border-bottom: 1px solid transparent;
     }
     nav.scrolled {
-      background: var(--cream);
-      box-shadow: 0 1px 0 rgba(196,169,106,.2);
-      padding: 16px 40px;
+      background: rgba(245,240,235,0.96); backdrop-filter: blur(12px);
+      padding: 1.25rem 4rem; border-color: rgba(196,169,106,0.18);
     }
     .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 300;
-      letter-spacing: .32em;
-      text-transform: uppercase;
-      color: var(--black);
-      position: relative;
-      padding-bottom: 10px;
+      font-family: var(--serif); font-weight: 300; font-size: 1.2rem;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--cream);
+      text-decoration: none; transition: color 0.5s ease;
     }
-    .nav-logo::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 28px;
-      height: 1px;
-      background: var(--gold);
-    }
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      align-items: center;
-    }
+    nav.scrolled .nav-logo { color: var(--black); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--body);
-      transition: color .2s;
+      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(245,240,235,0.85); text-decoration: none;
+      position: relative; padding-bottom: 3px; transition: color 0.5s ease;
     }
-    .nav-links a:hover { color: var(--gold-brown); }
-    .nav-cta {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--black);
-      border: 1px solid var(--gold);
-      padding: 9px 22px;
-      transition: background .25s, color .25s;
+    nav.scrolled .nav-links a { color: var(--body); }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 1px; background: var(--gold); transition: width 0.35s ease;
     }
-    .nav-cta:hover {
-      background: var(--gold);
-      color: var(--white);
-    }
+    .nav-links a:hover::after { width: 100%; }
 
-    /* ── HERO ───────────────────────────────────────────── */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 120px 24px 80px;
-      position: relative;
-      overflow: hidden;
-      background: var(--cream);
+    /* HERO */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 0 4rem 5rem; overflow: hidden;
     }
-    /* subtle grain overlay */
-    #hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-      opacity: .5;
-      pointer-events: none;
+    .hero-media { position: absolute; inset: 0; z-index: 0; }
+    .hero-media video, .hero-media img.hero-fallback {
+      width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
     }
-    /* soft radial glow */
-    #hero::after {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 70vw; height: 70vw;
-      max-width: 800px; max-height: 800px;
-      background: radial-gradient(ellipse, rgba(196,169,106,.08) 0%, transparent 70%);
-      pointer-events: none;
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(26,26,26,0.72) 0%, rgba(26,26,26,0.48) 55%, rgba(26,26,26,0.18) 100%);
     }
-    .hero-eyebrow {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: .3em;
-      text-transform: uppercase;
-      color: var(--gold-brown);
-      margin-bottom: 28px;
-      opacity: 0;
-      animation: fadeUp .9s ease .2s forwards;
+    .hero-line {
+      position: absolute; top: 20%; right: 4rem; width: 1px; height: 30vh;
+      background: linear-gradient(to bottom, transparent, rgba(196,169,106,0.5), transparent); z-index: 1;
     }
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(3.2rem, 8vw, 7.5rem);
-      font-weight: 300;
-      line-height: 1.05;
-      letter-spacing: -.01em;
-      color: var(--black);
-      max-width: 820px;
-      margin-bottom: 10px;
-      opacity: 0;
-      animation: fadeUp .9s ease .38s forwards;
+    .hero-content { position: relative; z-index: 1; max-width: 680px; }
+    .hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.75rem; }
+    .hero-headline {
+      font-family: var(--serif); font-style: italic; font-weight: 300;
+      font-size: clamp(2.4rem, 4.2vw, 4.2rem); line-height: 1.06;
+      color: var(--cream); margin-bottom: 2.25rem; letter-spacing: -0.01em;
     }
-    .hero-title em {
-      font-style: italic;
-      color: var(--gold-brown);
-    }
-    .hero-rule {
-      width: 1px;
-      height: 56px;
-      background: var(--gold);
-      margin: 32px auto;
-      opacity: 0;
-      animation: fadeUp .9s ease .54s forwards;
-    }
-    .hero-sub {
-      font-size: 1rem;
-      font-weight: 300;
-      letter-spacing: .06em;
-      color: var(--body);
-      max-width: 480px;
-      margin: 0 auto 48px;
-      opacity: 0;
-      animation: fadeUp .9s ease .66s forwards;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp .9s ease .8s forwards;
-    }
-    .btn-primary {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      background: var(--black);
-      color: var(--cream);
-      padding: 15px 38px;
-      transition: background .25s, transform .2s;
-    }
-    .btn-primary:hover {
-      background: var(--gold-brown);
-      transform: translateY(-1px);
-    }
-    .btn-secondary {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--body);
-      padding: 15px 38px;
-      border: 1px solid var(--warm-grey);
-      transition: border-color .25s, color .25s;
-    }
-    .btn-secondary:hover {
-      border-color: var(--gold-brown);
-      color: var(--gold-brown);
-    }
+    .hero-sub { font-size: 0.97rem; line-height: 1.9; letter-spacing: 0.02em; color: rgba(245,240,235,0.8); max-width: 44ch; margin-bottom: 3rem; }
+    .link-arrow { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; padding-bottom: 3px; transition: opacity 0.3s; }
+    .link-arrow:hover { opacity: 0.7; }
+    .link-arrow-light { color: var(--cream); border-bottom: 1px solid rgba(196,169,106,0.7); }
+    .link-arrow-dark  { color: var(--black); border-bottom: 1px solid var(--gold); }
     .hero-scroll {
-      position: absolute;
-      bottom: 36px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      opacity: 0;
-      animation: fadeUp .9s ease 1.1s forwards;
+      position: absolute; bottom: 2.5rem; right: 4rem; font-size: 0.6rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: rgba(245,240,235,0.5); writing-mode: vertical-rl; z-index: 1;
     }
-    .hero-scroll span {
-      font-size: 9px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--warm-grey);
+    .hero-logo-mark {
+      width: 155px; height: 155px; object-fit: cover; object-position: center top;
+      mix-blend-mode: screen; margin-bottom: 2rem; display: block;
+      opacity: 0.95;
     }
-    .scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, var(--warm-grey), transparent);
-      animation: scrollDrop 1.8s ease-in-out infinite;
+    .footer-logo-img {
+      height: 72px; width: auto; display: block; opacity: 0.88;
+      transition: opacity 0.3s;
+    }
+    .footer-logo-img:hover { opacity: 1; }
+    .nav-logo-img {
+      height: 36px; width: auto; display: none; mix-blend-mode: screen; opacity: 0.9;
     }
 
-    /* ── IMAGE PLACEHOLDER ──────────────────────────────── */
-    /* Replace .img-placeholder with a real <img> tag when photos are ready */
-    .img-placeholder {
-      background: linear-gradient(135deg, var(--cream-dark) 0%, var(--warm-grey) 60%, var(--gold-brown) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .img-placeholder::after {
-      content: attr(data-label);
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: .85rem;
-      color: rgba(255,255,255,.55);
-      letter-spacing: .06em;
-      text-align: center;
-      padding: 12px;
-    }
-    .img-placeholder .petal-svg {
-      position: absolute;
-      inset: 0;
+    /* BANNER */
+    .banner-section {
       width: 100%;
-      height: 100%;
-      opacity: .07;
+      line-height: 0;
     }
-
-    /* ── ABOUT / INTRO ──────────────────────────────────── */
-    #about {
-      padding: var(--section-pad);
-      background: var(--white);
-    }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-      max-width: var(--max-w);
-      margin: 0 auto;
-    }
-    .about-img {
-      height: 580px;
-      /* REPLACE with: <img src="your-photo.jpg" alt="Grand Petal Co. installation"> */
-    }
-    .about-text { }
-    .about-text .label { margin-bottom: 18px; }
-    .about-text h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      font-weight: 400;
-      line-height: 1.15;
-      color: var(--black);
-      margin-bottom: 28px;
-    }
-    .about-text h2 em {
-      font-style: italic;
-      color: var(--gold-brown);
-    }
-    .about-text p {
-      font-size: .97rem;
-      line-height: 1.9;
-      color: var(--body);
-      margin-bottom: 20px;
-    }
-    .about-detail {
-      display: flex;
-      gap: 40px;
-      margin-top: 40px;
-      padding-top: 36px;
-      border-top: 1px solid rgba(196,169,106,.2);
-    }
-    .about-detail-item { }
-    .about-detail-item .number {
-      font-family: var(--font-display);
-      font-size: 2.8rem;
-      font-weight: 300;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-    .about-detail-item p {
-      font-size: .78rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--gold-brown);
-      margin: 0;
-    }
-
-    /* ── COLLECTIONS ────────────────────────────────────── */
-    #collections {
-      padding: var(--section-pad);
-      background: var(--cream);
-    }
-    .section-header {
-      text-align: center;
-      margin-bottom: 64px;
-    }
-    .section-header .label { margin-bottom: 16px; }
-    .section-header h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 400;
-      color: var(--black);
-      line-height: 1.15;
-      margin-bottom: 18px;
-    }
-    .section-header h2 em {
-      font-style: italic;
-      color: var(--gold-brown);
-    }
-    .section-header p {
-      font-size: .95rem;
-      color: var(--body);
-      max-width: 520px;
-      margin: 0 auto;
-      font-weight: 300;
-    }
-    .collections-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      max-width: var(--max-w);
-      margin: 0 auto;
-    }
-    .collection-card {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-    }
-    .collection-card:first-child {
-      grid-column: span 2;
-    }
-    .collection-img {
-      height: 420px;
-      transition: transform .7s ease;
-      /* REPLACE with <img> when photos ready */
-    }
-    .collection-card:first-child .collection-img {
-      height: 520px;
-    }
-    .collection-card:hover .collection-img {
-      transform: scale(1.04);
-    }
-    .collection-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(26,26,26,.72) 0%, transparent 55%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 32px;
-    }
-    .collection-overlay .label { color: var(--warm-grey); margin-bottom: 8px; }
-    .collection-overlay h3 {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 400;
-      color: var(--white);
-      line-height: 1.2;
-    }
-
-    /* ── SERVE ──────────────────────────────────────────── */
-    #serve {
-      padding: var(--section-pad);
-      background: var(--black);
-    }
-    #serve .section-header h2,
-    #serve .label { color: var(--cream); }
-    #serve .section-header p { color: var(--warm-grey); }
-    .serve-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      background: rgba(196,169,106,.15);
-    }
-    .serve-card {
-      background: var(--black);
-      padding: 52px 40px;
-      text-align: center;
-      transition: background .3s;
-    }
-    .serve-card:hover { background: #242424; }
-    .serve-icon {
-      width: 44px;
-      height: 44px;
-      margin: 0 auto 28px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .serve-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
-    .serve-card .label { color: var(--gold); margin-bottom: 16px; }
-    .serve-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.7rem;
-      font-weight: 400;
-      color: var(--cream);
-      margin-bottom: 18px;
-      line-height: 1.2;
-    }
-    .serve-card p {
-      font-size: .9rem;
-      color: var(--warm-grey);
-      line-height: 1.85;
-      font-weight: 300;
-    }
-
-    /* ── RENTAL ─────────────────────────────────────────── */
-    #rental {
-      padding: var(--section-pad);
-      background: var(--cream-dark);
-    }
-    .rental-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-      max-width: var(--max-w);
-      margin: 0 auto;
-    }
-    .rental-img {
-      height: 540px;
-      /* REPLACE with real photo */
-    }
-    .rental-text .label { margin-bottom: 16px; }
-    .rental-text h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 400;
-      color: var(--black);
-      line-height: 1.15;
-      margin-bottom: 24px;
-    }
-    .rental-text h2 em { font-style: italic; color: var(--gold-brown); }
-    .rental-text p {
-      font-size: .97rem;
-      color: var(--body);
-      line-height: 1.9;
-      margin-bottom: 20px;
-    }
-    .rental-features {
-      margin-top: 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    .rental-feature {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-    }
-    .rental-feature-dot {
-      width: 6px; height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-      flex-shrink: 0;
-      margin-top: 9px;
-    }
-    .rental-feature p {
-      font-size: .9rem;
-      color: var(--body);
-      margin: 0;
-      line-height: 1.7;
-    }
-    .rental-feature strong {
-      font-weight: 500;
-      color: var(--black);
-    }
-
-    /* ── PROCESS ────────────────────────────────────────── */
-    #process {
-      padding: var(--section-pad);
-      background: var(--white);
-    }
-    .process-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      position: relative;
-    }
-    .process-steps::before {
-      content: '';
-      position: absolute;
-      top: 28px;
-      left: 12.5%;
-      right: 12.5%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--gold), var(--gold), transparent);
-      opacity: .4;
-    }
-    .process-step {
-      text-align: center;
-      padding: 0 28px;
-      position: relative;
-    }
-    .step-num {
-      width: 56px; height: 56px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 28px;
-      background: var(--white);
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 300;
-      color: var(--gold-brown);
-      position: relative;
-      z-index: 1;
-    }
-    .process-step h3 {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 500;
-      color: var(--black);
-      margin-bottom: 14px;
-      line-height: 1.2;
-    }
-    .process-step p {
-      font-size: .88rem;
-      color: var(--body);
-      line-height: 1.8;
-      font-weight: 300;
-    }
-
-    /* ── FAQ ────────────────────────────────────────────── */
-    #faq {
-      padding: var(--section-pad);
-      background: var(--cream);
-    }
-    .faq-wrap {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-    .faq-item {
-      border-bottom: 1px solid rgba(196,169,106,.25);
-    }
-    .faq-q {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 26px 0;
-      cursor: pointer;
-      gap: 20px;
-    }
-    .faq-q h3 {
-      font-family: var(--font-display);
-      font-size: 1.18rem;
-      font-weight: 400;
-      color: var(--black);
-      line-height: 1.3;
-    }
-    .faq-icon {
-      width: 22px; height: 22px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background .25s, transform .3s;
-    }
-    .faq-icon svg { width: 10px; transition: transform .3s; }
-    .faq-item.open .faq-icon { background: var(--gold); transform: rotate(45deg); }
-    .faq-item.open .faq-icon svg path { stroke: var(--white); }
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .45s ease, padding .3s ease;
-    }
-    .faq-item.open .faq-a { max-height: 300px; padding-bottom: 26px; }
-    .faq-a p {
-      font-size: .93rem;
-      color: var(--body);
-      line-height: 1.9;
-      font-weight: 300;
-    }
-
-    /* ── GALLERY STRIP ──────────────────────────────────── */
-    #gallery {
-      padding: 0;
-      overflow: hidden;
-    }
-    .gallery-strip {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      height: 340px;
-    }
-    .gallery-strip-img {
-      overflow: hidden;
-      /* REPLACE with real photos */
-    }
-    .gallery-strip-img .img-placeholder {
-      height: 100%;
-      transition: transform .6s ease;
-    }
-    .gallery-strip-img:hover .img-placeholder { transform: scale(1.06); }
-
-    /* ── CTA / CONTACT ──────────────────────────────────── */
-    #contact {
-      padding: var(--section-pad);
-      background: var(--cream-dark);
-    }
-    .contact-wrap {
-      max-width: 680px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .contact-wrap .label { margin-bottom: 18px; }
-    .contact-wrap h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      font-weight: 400;
-      color: var(--black);
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-    .contact-wrap h2 em { font-style: italic; color: var(--gold-brown); }
-    .contact-wrap > p {
-      font-size: .97rem;
-      color: var(--body);
-      line-height: 1.85;
-      margin-bottom: 48px;
-      font-weight: 300;
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      text-align: left;
-    }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .form-group label {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--gold-brown);
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      background: var(--white);
-      border: 1px solid rgba(196,169,106,.3);
-      padding: 14px 16px;
-      font-family: var(--font-body);
-      font-size: .92rem;
-      font-weight: 300;
-      color: var(--black);
-      transition: border-color .25s;
-      outline: none;
-      -webkit-appearance: none;
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--gold);
-    }
-    .form-group textarea { resize: vertical; min-height: 110px; }
-    .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B7355' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
-    .form-submit {
-      margin-top: 8px;
-    }
-    .form-submit button {
+    .banner-section img {
       width: 100%;
-      background: var(--black);
-      color: var(--cream);
-      font-family: var(--font-body);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      padding: 18px;
-      transition: background .25s;
-      border: none;
-      cursor: pointer;
-    }
-    .form-submit button:hover { background: var(--gold-brown); }
-    .form-note {
-      text-align: center;
-      font-size: .8rem;
-      color: var(--warm-grey);
-      margin-top: 16px;
+      height: auto;
+      display: block;
     }
 
-    /* ── FOOTER ─────────────────────────────────────────── */
+    /* SHARED */
+    section { padding: 8rem 4rem; }
+    .section-label { font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 2rem; }
+    .two-col { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 7rem; align-items: start; }
+    .section-heading { font-family: var(--serif); font-weight: 300; font-size: clamp(1.55rem, 2.4vw, 2.4rem); line-height: 1.2; color: var(--black); margin-bottom: 2.25rem; }
+    .body-text { font-size: 0.97rem; line-height: 2; color: var(--body); margin-bottom: 1.5rem; }
+    .detail-text { font-size: 0.88rem; letter-spacing: 0.07em; color: var(--grey); line-height: 1.9; }
+    .thin-rule { width: 36px; height: 1px; background: var(--gold); margin-bottom: 2rem; }
+
+    /* COLLECTIONS */
+    #collections { padding-top: 0; }
+    .collections-header { max-width: 1100px; margin: 0 auto 4.5rem; }
+    .collections-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .card {
+      position: relative; overflow: hidden; cursor: pointer;
+      aspect-ratio: 3/4; background-size: cover; background-position: center;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .card:last-child { grid-column: 1 / -1; aspect-ratio: 21/8; }
+    .card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,26,26,0.88) 0%, rgba(26,26,26,0.35) 45%, rgba(26,26,26,0.05) 100%);
+      transition: background 0.45s ease; z-index: 1;
+    }
+    .card:hover { transform: scale(1.015); }
+    .card:hover::before { background: linear-gradient(to top, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.55) 55%, rgba(26,26,26,0.15) 100%); }
+    .card-inner { position: absolute; bottom: 0; left: 0; right: 0; padding: 2.5rem 2.25rem; z-index: 2; }
+    .card-num { font-family: var(--serif); font-style: italic; font-size: 0.78rem; color: var(--gold); display: block; margin-bottom: 0.75rem; }
+    .card-title { font-family: var(--serif); font-weight: 300; font-size: 1.15rem; color: var(--cream); line-height: 1.25; margin-bottom: 0.75rem; }
+    .card-brief { font-size: 0.9rem; line-height: 1.75; color: rgba(245,240,235,0.7); margin-bottom: 1.25rem; max-width: 38ch; }
+    .card-cta { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); opacity: 0; transform: translateY(6px); transition: opacity 0.35s ease, transform 0.35s ease; }
+    .card:hover .card-cta { opacity: 1; transform: translateY(0); }
+
+    /* DARK */
+    .dark { background: var(--black); }
+    .dark .section-label { color: var(--gold); }
+    .dark .section-heading { color: var(--cream); }
+    .serve-list { list-style: none; }
+    .serve-item { display: flex; gap: 1.75rem; align-items: flex-start; padding: 1.75rem 0; border-bottom: 1px solid rgba(196,180,154,0.18); }
+    .serve-item:first-child { border-top: 1px solid rgba(196,180,154,0.18); }
+    .serve-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; margin-top: 0.55rem; flex-shrink: 0; }
+    .serve-title { font-family: var(--serif); font-size: 1.15rem; color: var(--cream); display: block; margin-bottom: 0.35rem; }
+    .serve-desc { font-size: 0.9rem; color: rgba(196,180,154,0.65); line-height: 1.8; }
+
+    /* CRAFT */
+    .craft-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr; gap: 7rem; align-items: center; }
+    .craft-image { aspect-ratio: 3/4; overflow: hidden; }
+    .craft-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+
+    /* FORM */
+    .form-section { background: var(--black); padding: 8rem 4rem; }
+    .form-section .section-label { color: var(--gold); }
+    .form-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.6fr; gap: 7rem; align-items: start; }
+    .form-heading { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(1.65rem, 2.8vw, 2.8rem); color: var(--cream); line-height: 1.15; margin-bottom: 1.5rem; }
+    .form-sub { font-size: 0.92rem; line-height: 1.9; color: rgba(196,180,154,0.65); }
+    .availability-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; }
+    .field { position: relative; margin-bottom: 2rem; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { display: block; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .field input, .field select, .field textarea {
+      width: 100%; background: transparent; border: none;
+      border-bottom: 1px solid rgba(196,169,106,0.25);
+      padding: 0.6rem 0; font-family: var(--sans); font-weight: 300;
+      font-size: 0.85rem; color: var(--cream); outline: none;
+      transition: border-color 0.3s ease; -webkit-appearance: none; appearance: none; border-radius: 0;
+    }
+    .field select { cursor: pointer; }
+    .field select option { background: var(--black); color: var(--cream); }
+    .field input::placeholder, .field textarea::placeholder { color: rgba(245,240,235,0.25); }
+    .field input:focus, .field select:focus, .field textarea:focus { border-bottom-color: var(--gold); }
+    .field textarea { resize: none; height: 100px; line-height: 1.8; }
+    .form-submit { grid-column: 1 / -1; margin-top: 1rem; }
+    .btn {
+      display: inline-block; font-family: var(--sans); font-weight: 400;
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--cream); background: transparent;
+      border: 1px solid rgba(196,169,106,0.4);
+      padding: 1.15rem 2.75rem; cursor: pointer;
+      transition: background 0.35s ease, border-color 0.35s ease; text-decoration: none;
+    }
+    .btn:hover { background: rgba(196,169,106,0.12); border-color: var(--gold); }
+    .form-note { font-size: 0.82rem; color: rgba(196,180,154,0.4); margin-top: 1.5rem; line-height: 1.7; grid-column: 1 / -1; }
+
+    /* FOOTER */
     footer {
-      background: var(--black);
-      padding: 60px 24px;
-      text-align: center;
+      background: var(--black); color: rgba(245,240,235,0.35);
+      padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.7rem; letter-spacing: 0.08em; border-top: 1px solid rgba(196,169,106,0.1);
     }
-    .footer-logo {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 300;
-      letter-spacing: .32em;
-      text-transform: uppercase;
-      color: var(--cream);
-      margin-bottom: 8px;
-    }
-    .footer-tagline {
-      font-size: .78rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--warm-grey);
-      margin-bottom: 36px;
-    }
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 36px;
-      margin-bottom: 36px;
-    }
-    .footer-links a {
-      font-size: .8rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--warm-grey);
-      transition: color .2s;
-    }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-rule {
-      width: 40px;
-      height: 1px;
-      background: rgba(196,169,106,.3);
-      margin: 0 auto 28px;
-    }
-    .footer-copy {
-      font-size: .78rem;
-      color: rgba(196,180,154,.35);
-      letter-spacing: .06em;
-    }
-    .footer-location {
-      font-size: .78rem;
-      color: var(--warm-grey);
-      letter-spacing: .08em;
-      margin-bottom: 12px;
-    }
+    .footer-logo { font-family: var(--serif); font-weight: 300; font-size: 0.95rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,240,235,0.75); text-decoration: none; }
+    .footer-links { display: flex; gap: 2rem; align-items: center; }
+    footer a { color: rgba(245,240,235,0.35); text-decoration: none; transition: color 0.3s; }
+    footer a:hover { color: var(--gold); }
+    .instagram-link { display: flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; letter-spacing: 0.12em; }
+    .instagram-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.5; flex-shrink: 0; }
 
-    /* ── KEYFRAMES ──────────────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes scrollDrop {
-      0%, 100% { transform: scaleY(1); transform-origin: top; opacity: 1; }
-      50%       { transform: scaleY(.4); opacity: .4; }
-    }
+    /* MODAL */
+    .modal { position: fixed; inset: 0; z-index: 600; display: flex; align-items: center; justify-content: center; padding: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+    .modal.active { opacity: 1; pointer-events: all; }
+    .modal-backdrop { position: absolute; inset: 0; background: rgba(26,26,26,0.88); backdrop-filter: blur(6px); }
+    .modal-box { position: relative; width: 100%; max-width: 1060px; max-height: 88vh; background: var(--cream); display: grid; grid-template-columns: 1.1fr 1fr; overflow: visible; transform: translateY(24px); transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .modal.active .modal-box { transform: translateY(0); }
+    .modal-image { overflow: hidden; max-height: 88vh; }
+    .modal-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .modal-content { padding: 3.5rem 3rem 3rem; overflow-y: scroll; display: flex; flex-direction: column; max-height: 88vh; -webkit-overflow-scrolling: touch; }
+    .modal-close { position: absolute; top: 1.25rem; right: 1.25rem; background: none; border: none; font-size: 1.75rem; color: var(--cream); cursor: pointer; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; z-index: 10; opacity: 0.7; transition: opacity 0.3s; font-family: var(--serif); font-weight: 300; line-height: 1; }
+    .modal-close:hover { opacity: 1; }
+    .modal-num { font-family: var(--serif); font-style: italic; font-size: 0.8rem; color: var(--gold); display: block; margin-bottom: 0.6rem; }
+    .modal-title { font-family: var(--serif); font-weight: 300; font-size: 1.7rem; color: var(--black); line-height: 1.2; margin-bottom: 1.75rem; }
+    .modal-detail { font-size: 0.92rem; line-height: 2; color: var(--body); margin-bottom: 2rem; flex: 1; }
+    .modal-specs { list-style: none; margin-bottom: 2.5rem; border-top: 1px solid rgba(196,169,106,0.2); padding-top: 1.5rem; }
+    .modal-specs li { font-size: 0.73rem; letter-spacing: 0.06em; color: var(--gold-dark); padding: 0.4rem 0; border-bottom: 1px solid rgba(196,169,106,0.12); display: flex; gap: 0.75rem; align-items: center; }
+    .modal-specs li::before { content: ''; width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+    .btn-dark { background: var(--black); color: var(--cream); border: none; display: inline-block; font-family: var(--sans); font-weight: 400; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.1rem 2.5rem; cursor: pointer; text-decoration: none; transition: background 0.35s ease; align-self: flex-start; }
+    .btn-dark:hover { background: var(--gold-dark); }
 
-    /* ── MOBILE ─────────────────────────────────────────── */
-    @media (max-width: 900px) {
-      :root { --section-pad: 80px 24px; }
-      nav { padding: 18px 24px; }
-      nav.scrolled { padding: 14px 24px; }
+    /* ANIMATIONS */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.85s ease, transform 0.85s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal.d1 { transition-delay: 0.12s; }
+    .reveal.d2 { transition-delay: 0.24s; }
+    .reveal.d3 { transition-delay: 0.36s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      nav, nav.scrolled { padding: 1.5rem 2rem; }
       .nav-links { display: none; }
-      .about-grid, .rental-grid { grid-template-columns: 1fr; gap: 40px; }
-      .about-img { height: 340px; order: -1; }
-      .rental-img { height: 300px; }
+      .nav-logo { display: none; }
+      .nav-logo-img { display: block; }
+      nav.scrolled .nav-logo-img { mix-blend-mode: normal; opacity: 1; filter: brightness(0); }
+      .hero { padding: 0 2rem 4rem; }
+      section { padding: 5rem 2rem; }
+      .two-col, .craft-grid, .form-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .craft-image { max-height: 65vw; aspect-ratio: unset; }
       .collections-grid { grid-template-columns: 1fr 1fr; }
-      .collection-card:first-child { grid-column: span 2; }
-      .serve-grid { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr 1fr; gap: 48px; }
-      .process-steps::before { display: none; }
-      .gallery-strip { grid-template-columns: repeat(3, 1fr); height: 220px; }
-      .gallery-strip-img:nth-child(4),
-      .gallery-strip-img:nth-child(5) { display: none; }
-      .form-row { grid-template-columns: 1fr; }
+      .card:last-child { grid-column: 1 / -1; aspect-ratio: 16/9; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem; }
+      .form-section { padding: 5rem 2rem; }
+      .availability-form { grid-template-columns: 1fr; }
+      .hero-line { display: none; }
     }
-
-    @media (max-width: 580px) {
+    @media (max-width: 560px) {
       .collections-grid { grid-template-columns: 1fr; }
-      .collection-card:first-child { grid-column: span 1; }
-      .process-steps { grid-template-columns: 1fr; }
-      .gallery-strip { grid-template-columns: repeat(2, 1fr); }
-      .gallery-strip-img:nth-child(3),
-      .gallery-strip-img:nth-child(4),
-      .gallery-strip-img:nth-child(5) { display: none; }
-      .about-detail { flex-direction: column; gap: 24px; }
+      .card:last-child { aspect-ratio: 4/5; }
+      .modal { padding: 0; }
+      .modal-box { grid-template-columns: 1fr; max-height: 100vh; }
+      .modal-image { max-height: 45vh; }
     }
   </style>
 </head>
-
 <body>
 
-<!-- ═══════════════════════════════════════════════════════
-     NAVIGATION
-═══════════════════════════════════════════════════════════ -->
-<nav id="navbar">
-  <a href="#hero" class="nav-logo">Grand Petal Co.</a>
-  <ul class="nav-links">
-    <li><a href="#about">Our Story</a></li>
-    <li><a href="#collections">Collections</a></li>
-    <li><a href="#serve">Who We Serve</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact" class="nav-cta">Check Availability</a></li>
-  </ul>
-</nav>
+  <!-- NAVIGATION -->
+  <nav id="nav">
+    <a class="nav-logo" href="/">Grand Petal Co.</a>
+    <a href="/" aria-label="Grand Petal Co." class="nav-logo-img-link">
+      <img src="img/logo.jpg" alt="Grand Petal Co." class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#serve">Who We Work With</a></li>
+      <li><a href="#craft">The Craft</a></li>
+      <li><a href="#inquire">Check Availability</a></li>
+    </ul>
+  </nav>
 
-
-<!-- ═══════════════════════════════════════════════════════
-     HERO
-═══════════════════════════════════════════════════════════ -->
-<section id="hero">
-  <p class="hero-eyebrow">Handcrafted in Kitchener-Waterloo</p>
-  <h1 class="hero-title">
-    Where <em>every space</em><br>becomes something<br>extraordinary
-  </h1>
-  <div class="hero-rule"></div>
-  <p class="hero-sub">Large-scale silk floral installations for corporate events, weddings, and exceptional occasions.</p>
-  <div class="hero-actions">
-    <a href="#contact" class="btn-primary">Check Availability</a>
-    <a href="#collections" class="btn-secondary">View Collections</a>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════
-     ABOUT
-═══════════════════════════════════════════════════════════ -->
-<section id="about">
-  <div class="about-grid">
-
-    <div class="about-img img-placeholder reveal" data-label="Grand Petal Co. Installation">
-      <!-- REPLACE THIS ENTIRE DIV with: <img src="your-hero-photo.jpg" alt="Grand Petal Co. installation"> -->
-      <svg class="petal-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="100" cy="60" rx="30" ry="55" fill="white" transform="rotate(0 100 100)"/>
-        <ellipse cx="100" cy="60" rx="30" ry="55" fill="white" transform="rotate(45 100 100)"/>
-        <ellipse cx="100" cy="60" rx="30" ry="55" fill="white" transform="rotate(90 100 100)"/>
-        <ellipse cx="100" cy="60" rx="30" ry="55" fill="white" transform="rotate(135 100 100)"/>
-        <circle cx="100" cy="100" r="15" fill="white"/>
-      </svg>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-media">
+      <video autoplay muted loop playsinline poster="img/hero.jpg">
+        <source src="img/hero-video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
     </div>
+    <div class="hero-line"></div>
+    <div class="hero-content">
+      <img src="img/logo.jpg" alt="Grand Petal Co." class="hero-logo-mark reveal">
+      <p class="hero-eyebrow reveal">Kitchener–Waterloo–Cambridge · Ontario</p>
+      <h1 class="hero-headline reveal d1">The art of<br>floral architecture,<br>handcrafted in silk</h1>
+      <p class="hero-sub reveal d2">Handcrafted silk floral installations of exceptional scale, built for spaces that demand presence.</p>
+      <a href="#inquire" class="link-arrow link-arrow-light reveal d3">Check availability</a>
+    </div>
+    <span class="hero-scroll" aria-hidden="true">Scroll</span>
+  </section>
 
-    <div class="about-text">
-      <span class="label reveal">Our Story</span>
-      <h2 class="reveal reveal-delay-1">Floral architecture,<br><em>crafted by hand</em></h2>
-      <p class="reveal reveal-delay-2">Grand Petal Co. was born from a shared belief that spaces have the power to move people — that the right environment can turn an ordinary event into something guests carry with them long after they leave.</p>
-      <p class="reveal reveal-delay-3">Each installation is handcrafted from premium organza silk, designed to stand 7 to 8 feet tall on modular moss-covered bases. Every petal is shaped by hand. Every arrangement is composed with intention. The result is a living sculpture that anchors a room and becomes the photograph everyone shares.</p>
-      <p class="reveal reveal-delay-4">We are a husband-and-wife team based in Kitchener-Waterloo. We design, craft, deliver, and install every piece ourselves — because details matter, and we refuse to leave them to chance.</p>
-      <div class="about-detail reveal reveal-delay-5">
-        <div class="about-detail-item">
-          <div class="number">7–8<span style="font-size:1.4rem">ft</span></div>
-          <p>Installation Height</p>
-        </div>
-        <div class="about-detail-item">
-          <div class="number">100%</div>
-          <p>Handcrafted Silk</p>
-        </div>
-        <div class="about-detail-item">
-          <div class="number">0</div>
-          <p>Allergens</p>
+  <!-- BANNER -->
+  <div class="banner-section">
+    <img src="img/banner.png" alt="Grand Petal Co. — Giant Handmade Floral Architecture">
+  </div>
+
+  <!-- STATEMENT -->
+  <section>
+    <div class="two-col">
+      <div class="reveal">
+        <p class="section-label">The Work</p>
+        <div class="thin-rule"></div>
+        <p class="detail-text">Each installation is hand-crafted from premium organza silk, rising over seven feet tall on custom architectural bases, built to define a space.</p>
+      </div>
+      <div class="reveal d1">
+        <h2 class="section-heading">Not floristry.<br>Not décor.<br>Floral architecture.</h2>
+        <p class="body-text">Grand Petal Co. brings a standard of craftsmanship and artistry to large-scale floral design that commercial spaces truly deserve. Our silk floral installations are crafted to the standard of fine art, hypoallergenic and maintenance-free, season after season.</p>
+        <p class="body-text">Every piece is designed as a defining feature of its space, carrying the visual weight of a commissioned sculpture with the freedom to evolve as your space does.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section id="collections">
+    <div class="collections-header">
+      <p class="section-label reveal">The Collections</p>
+      <h2 class="section-heading reveal d1" style="max-width: 20ch;">Explore our collections. Every one a statement in silk.</h2>
+      <p class="body-text reveal d2" style="max-width: 52ch; margin-top: 1.5rem; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.05rem;">Every Grand Petal Co. arrangement can be created to your vision. Whether you are drawn to one of our named collections or have a colour, a mood, or a space in mind, we will design something entirely your own. Your vision, your palette, your space, brought to life in the finest premium materials.</p>
+    </div>
+    <div class="collections-grid">
+      <div class="card reveal" style="background-image:url('img/garden-reverie.jpg')" data-collection="0">
+        <div class="card-inner">
+          <span class="card-num">I</span>
+          <h3 class="card-title">The Garden Reverie</h3>
+          <p class="card-brief">Rich, generous, and gloriously warm. The warmth of a summer garden, captured in silk and crafted to be experienced.</p>
+          <span class="card-cta">View details →</span>
         </div>
       </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════
-     COLLECTIONS
-═══════════════════════════════════════════════════════════ -->
-<section id="collections">
-  <div class="section-header reveal">
-    <span class="label">Our Collections</span>
-    <span class="gold-rule"></span>
-    <h2>Seven distinct worlds.<br><em>One unforgettable statement.</em></h2>
-    <p>Each collection carries its own mood, palette, and personality. Every installation is available for rental or purchase.</p>
-  </div>
-
-  <div class="collections-grid container">
-
-    <!-- Card 1 — Featured (spans 2 cols) -->
-    <div class="collection-card reveal">
-      <div class="collection-img img-placeholder" data-label="The Full Bloom Collection">
-        <!-- REPLACE with: <img src="full-bloom.jpg" alt="The Full Bloom Collection"> -->
-        <svg class="petal-svg" viewBox="0 0 200 200"><ellipse cx="100" cy="60" rx="28" ry="50" fill="white" transform="rotate(0 100 100)"/><ellipse cx="100" cy="60" rx="28" ry="50" fill="white" transform="rotate(60 100 100)"/><ellipse cx="100" cy="60" rx="28" ry="50" fill="white" transform="rotate(120 100 100)"/><circle cx="100" cy="100" r="14" fill="white"/></svg>
-      </div>
-      <div class="collection-overlay">
-        <span class="label">Signature Collection</span>
-        <h3>The Full Bloom Collection</h3>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="collection-card reveal reveal-delay-1">
-      <div class="collection-img img-placeholder" style="background: linear-gradient(135deg, #D4C5B0, #8B7355)" data-label="The Garden Reverie">
-        <svg class="petal-svg" viewBox="0 0 200 200"><ellipse cx="100" cy="65" rx="22" ry="42" fill="white" transform="rotate(0 100 100)"/><ellipse cx="100" cy="65" rx="22" ry="42" fill="white" transform="rotate(72 100 100)"/><ellipse cx="100" cy="65" rx="22" ry="42" fill="white" transform="rotate(144 100 100)"/><ellipse cx="100" cy="65" rx="22" ry="42" fill="white" transform="rotate(216 100 100)"/><ellipse cx="100" cy="65" rx="22" ry="42" fill="white" transform="rotate(288 100 100)"/><circle cx="100" cy="100" r="12" fill="white"/></svg>
-      </div>
-      <div class="collection-overlay">
-        <span class="label">Collection</span>
-        <h3>The Garden Reverie</h3>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="collection-card reveal reveal-delay-2">
-      <div class="collection-img img-placeholder" style="background: linear-gradient(135deg, #B8A898, #6B8B6B)" data-label="The Wildflower Meadow">
-        <svg class="petal-svg" viewBox="0 0 200 200"><ellipse cx="100" cy="68" rx="18" ry="36" fill="white" transform="rotate(0 100 100)"/><ellipse cx="100" cy="68" rx="18" ry="36" fill="white" transform="rotate(51.4 100 100)"/><ellipse cx="100" cy="68" rx="18" ry="36" fill="white" transform="rotate(102.8 100 100)"/><ellipse cx="100" cy="68" rx="18" ry="36" fill="white" transform="rotate(154.2 100 100)"/><ellipse cx="100" cy="68" rx="18" ry="36" fill="white" transform="rotate(205.6 100 100)"/><ellipse cx="100" cy="68" rx="18" ry="36" fill="white" transform="rotate(257 100 100)"/><ellipse cx="100" cy="68" rx="18" ry="36" fill="white" transform="rotate(308.4 100 100)"/><circle cx="100" cy="100" r="10" fill="white"/></svg>
-      </div>
-      <div class="collection-overlay">
-        <span class="label">Collection</span>
-        <h3>The Wildflower Meadow</h3>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="collection-card reveal reveal-delay-3">
-      <div class="collection-img img-placeholder" style="background: linear-gradient(135deg, #3D3240, #6B4D6B)" data-label="The Moody Garden">
-        <svg class="petal-svg" viewBox="0 0 200 200"><ellipse cx="100" cy="62" rx="25" ry="46" fill="white" transform="rotate(0 100 100)"/><ellipse cx="100" cy="62" rx="25" ry="46" fill="white" transform="rotate(90 100 100)"/><ellipse cx="100" cy="62" rx="25" ry="46" fill="white" transform="rotate(180 100 100)"/><ellipse cx="100" cy="62" rx="25" ry="46" fill="white" transform="rotate(270 100 100)"/><circle cx="100" cy="100" r="16" fill="white"/></svg>
-      </div>
-      <div class="collection-overlay">
-        <span class="label">Collection</span>
-        <h3>The Moody Garden</h3>
-      </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="collection-card reveal reveal-delay-1">
-      <div class="collection-img img-placeholder" style="background: linear-gradient(135deg, #C4A8C0, #8B6B8B)" data-label="The Lavender Reverie">
-        <svg class="petal-svg" viewBox="0 0 200 200"><ellipse cx="100" cy="64" rx="20" ry="40" fill="white" transform="rotate(0 100 100)"/><ellipse cx="100" cy="64" rx="20" ry="40" fill="white" transform="rotate(60 100 100)"/><ellipse cx="100" cy="64" rx="20" ry="40" fill="white" transform="rotate(120 100 100)"/><ellipse cx="100" cy="64" rx="20" ry="40" fill="white" transform="rotate(180 100 100)"/><ellipse cx="100" cy="64" rx="20" ry="40" fill="white" transform="rotate(240 100 100)"/><ellipse cx="100" cy="64" rx="20" ry="40" fill="white" transform="rotate(300 100 100)"/><circle cx="100" cy="100" r="13" fill="white"/></svg>
-      </div>
-      <div class="collection-overlay">
-        <span class="label">Collection</span>
-        <h3>The Lavender Reverie</h3>
-      </div>
-    </div>
-
-    <!-- Card 6 -->
-    <div class="collection-card reveal reveal-delay-2">
-      <div class="collection-img img-placeholder" style="background: linear-gradient(135deg, #F0EDE8, #C4B49A)" data-label="The Grand Blanc">
-        <svg class="petal-svg" viewBox="0 0 200 200"><ellipse cx="100" cy="60" rx="30" ry="52" fill="white" transform="rotate(0 100 100)"/><ellipse cx="100" cy="60" rx="30" ry="52" fill="white" transform="rotate(45 100 100)"/><ellipse cx="100" cy="60" rx="30" ry="52" fill="white" transform="rotate(90 100 100)"/><ellipse cx="100" cy="60" rx="30" ry="52" fill="white" transform="rotate(135 100 100)"/><circle cx="100" cy="100" r="15" fill="white"/></svg>
-      </div>
-      <div class="collection-overlay" style="background: linear-gradient(to top, rgba(26,26,26,.5), transparent)">
-        <span class="label">Collection</span>
-        <h3>The Grand Blanc</h3>
-      </div>
-    </div>
-
-    <!-- Card 7 -->
-    <div class="collection-card reveal reveal-delay-3">
-      <div class="collection-img img-placeholder" style="background: linear-gradient(135deg, #C4A96A, #8B6B30)" data-label="The Golden Grove">
-        <svg class="petal-svg" viewBox="0 0 200 200"><ellipse cx="100" cy="63" rx="23" ry="44" fill="white" transform="rotate(0 100 100)"/><ellipse cx="100" cy="63" rx="23" ry="44" fill="white" transform="rotate(51.4 100 100)"/><ellipse cx="100" cy="63" rx="23" ry="44" fill="white" transform="rotate(102.8 100 100)"/><ellipse cx="100" cy="63" rx="23" ry="44" fill="white" transform="rotate(154.2 100 100)"/><ellipse cx="100" cy="63" rx="23" ry="44" fill="white" transform="rotate(205.6 100 100)"/><ellipse cx="100" cy="63" rx="23" ry="44" fill="white" transform="rotate(257 100 100)"/><ellipse cx="100" cy="63" rx="23" ry="44" fill="white" transform="rotate(308.4 100 100)"/><circle cx="100" cy="100" r="11" fill="white"/></svg>
-      </div>
-      <div class="collection-overlay">
-        <span class="label">Collection</span>
-        <h3>The Golden Grove</h3>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════
-     WHO WE SERVE
-═══════════════════════════════════════════════════════════ -->
-<section id="serve">
-  <div class="section-header reveal">
-    <span class="label">Who We Serve</span>
-    <span class="gold-rule"></span>
-    <h2>Built for spaces<br><em>that demand presence</em></h2>
-    <p>Our installations are designed for environments where first impressions are everything and the details are never accidental.</p>
-  </div>
-
-  <div class="serve-grid">
-    <div class="serve-card reveal">
-      <div class="serve-icon">
-        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
-      </div>
-      <span class="label">Corporate</span>
-      <h3>Corporate Events &amp; Offices</h3>
-      <p>Product launches, holiday galas, brand activations, office installations, and employee appreciation events. We help companies create environments that reflect their culture and impress their guests.</p>
-    </div>
-    <div class="serve-card reveal reveal-delay-2">
-      <div class="serve-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <span class="label">Weddings</span>
-      <h3>Weddings &amp; Celebrations</h3>
-      <p>Ceremony backdrops, sweetheart table statements, entrance installations, and reception centrepieces. Designed to be the photograph your guests return to again and again.</p>
-    </div>
-    <div class="serve-card reveal reveal-delay-4">
-      <div class="serve-icon">
-        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      </div>
-      <span class="label">Venues</span>
-      <h3>Venues &amp; Hospitality</h3>
-      <p>Lobbies, event halls, cultural celebrations, and seasonal installations. Our rental model is designed specifically for venues that want rotating, season-fresh statement pieces without the ongoing investment.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════
-     RENTAL
-═══════════════════════════════════════════════════════════ -->
-<section id="rental">
-  <div class="rental-grid container">
-
-    <div class="reveal">
-      <span class="label">The Rental Advantage</span>
-      <h2 class="reveal reveal-delay-1">Same stunning installation.<br><em>Renewed for every event.</em></h2>
-      <p class="reveal reveal-delay-2">Our rental model was built with B2B clients in mind. You receive all the visual impact of a large-scale floral installation — without the full cost of ownership, and without the storage challenge.</p>
-      <p class="reveal reveal-delay-3">We handle everything: delivery, professional setup, and full takedown. Your team arrives to a finished room, and leaves without a single petal to manage.</p>
-      <div class="rental-features reveal reveal-delay-4">
-        <div class="rental-feature">
-          <div class="rental-feature-dot"></div>
-          <p><strong>Flexible scheduling</strong> — available by the event, day, or weekend</p>
+      <div class="card reveal d1" style="background-image:url('img/wildflower-meadow.jpg')" data-collection="1">
+        <div class="card-inner">
+          <span class="card-num">II</span>
+          <h3 class="card-title">The Spring Bloom</h3>
+          <p class="card-brief">Sun-kissed and effortlessly light. A season in full drift, anchored by a peony caught mid-bloom.</p>
+          <span class="card-cta">View details →</span>
         </div>
-        <div class="rental-feature">
-          <div class="rental-feature-dot"></div>
-          <p><strong>Zero allergens</strong> — 100% premium organza silk, safe for all environments</p>
+      </div>
+      <div class="card reveal d2" style="background-image:url('img/moody-garden.jpg')" data-collection="2">
+        <div class="card-inner">
+          <span class="card-num">III</span>
+          <h3 class="card-title">The Coral Sonnet</h3>
+          <p class="card-brief">Rich in colour, deliberate in composition. The Coral Sonnet is warmth distilled into a single, unforgettable arrangement.</p>
+          <span class="card-cta">View details →</span>
         </div>
-        <div class="rental-feature">
-          <div class="rental-feature-dot"></div>
-          <p><strong>Full setup included</strong> — we install and remove, you take all the credit</p>
+      </div>
+      <div class="card reveal" style="background-image:url('img/lavender-reverie.jpg')" data-collection="3">
+        <div class="card-inner">
+          <span class="card-num">IV</span>
+          <h3 class="card-title">The Blush Drift</h3>
+          <p class="card-brief">Soft, romantic, and quietly luminous. A palette of blush, lavender, and dusty pink that feels like the first light of morning.</p>
+          <span class="card-cta">View details →</span>
         </div>
-        <div class="rental-feature">
-          <div class="rental-feature-dot"></div>
-          <p><strong>Recurring contracts available</strong> — lock in consistent pricing for ongoing events</p>
+      </div>
+      <div class="card reveal d1" style="background-image:url('img/grand-blanc.jpg');background-position:top center" data-collection="4">
+        <div class="card-inner">
+          <span class="card-num">V</span>
+          <h3 class="card-title">The Pearl Vignette</h3>
+          <p class="card-brief">Perfectly composed in pearl and blush. Every stem placed with intention, every petal worth lingering over.</p>
+          <span class="card-cta">View details →</span>
+        </div>
+      </div>
+      <div class="card reveal d2" style="background-image:url('img/golden-grove.jpg')" data-collection="5">
+        <div class="card-inner">
+          <span class="card-num">VI</span>
+          <h3 class="card-title">The Golden Portrait</h3>
+          <p class="card-brief">Sunlit and singular. The Golden Portrait is a trio of daffodils at their most refined, and their most beautiful.</p>
+          <span class="card-cta">View details →</span>
+        </div>
+      </div>
+      <div class="card reveal" style="background-image:url('img/full-bloom.jpg');background-position:center 30%" data-collection="6">
+        <div class="card-inner">
+          <span class="card-num">VII</span>
+          <h3 class="card-title">The Silk Ensemble</h3>
+          <p class="card-brief">A curated gathering of our finest blooms, each handcrafted and every arrangement uniquely composed.</p>
+          <span class="card-cta">View details →</span>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="rental-img img-placeholder reveal reveal-delay-2" data-label="Rental Installation">
-      <!-- REPLACE with: <img src="rental-photo.jpg" alt="Grand Petal Co. rental installation"> -->
-      <svg class="petal-svg" viewBox="0 0 200 200"><ellipse cx="100" cy="62" rx="26" ry="48" fill="white" transform="rotate(0 100 100)"/><ellipse cx="100" cy="62" rx="26" ry="48" fill="white" transform="rotate(72 100 100)"/><ellipse cx="100" cy="62" rx="26" ry="48" fill="white" transform="rotate(144 100 100)"/><ellipse cx="100" cy="62" rx="26" ry="48" fill="white" transform="rotate(216 100 100)"/><ellipse cx="100" cy="62" rx="26" ry="48" fill="white" transform="rotate(288 100 100)"/><circle cx="100" cy="100" r="14" fill="white"/></svg>
+  <!-- WHO WE SERVE -->
+  <section class="dark" id="serve">
+    <div class="two-col">
+      <div class="reveal">
+        <p class="section-label">Who We Work With</p>
+        <div class="thin-rule" style="background:rgba(196,169,106,0.4)"></div>
+        <h2 class="section-heading" style="font-size:clamp(1.4rem,2.2vw,2.1rem)">We work with spaces that carry presence. Grand entrance halls, architectural atriums, refined reception areas, curated communal spaces, and the celebrated corridors where presence is everything. If your space welcomes people, we want to make it truly unforgettable.</h2>
+      </div>
+      <ul class="serve-list reveal d1">
+        <li class="serve-item">
+          <span class="serve-dot"></span>
+          <div>
+            <span class="serve-title">Corporate &amp; Professional Spaces</span>
+            <span class="serve-desc">The spaces where your culture lives deserve to reflect it. We create installations that communicate the values, culture, and quiet confidence of the organizations behind them, without saying a word.</span>
+          </div>
+        </li>
+        <li class="serve-item">
+          <span class="serve-dot"></span>
+          <div>
+            <span class="serve-title">Hospitality &amp; Luxury Destinations</span>
+            <span class="serve-desc">Every great destination has something that makes it feel unlike anywhere else. We bring elegance and beauty to hotels, restaurants, private clubs, and wellness destinations that elevates every moment spent within them.</span>
+          </div>
+        </li>
+        <li class="serve-item">
+          <span class="serve-dot"></span>
+          <div>
+            <span class="serve-title">Retail &amp; Experiential Spaces</span>
+            <span class="serve-desc">The most memorable spaces are the ones that feel considered in every detail. We work with boutiques, showrooms, fashion houses, and galleries to create installations that draw people in, slow them down, and make them want to stay a little longer.</span>
+          </div>
+        </li>
+        <li class="serve-item">
+          <span class="serve-dot"></span>
+          <div>
+            <span class="serve-title">Healthcare &amp; Community Spaces</span>
+            <span class="serve-desc">The spaces where people spend their most vulnerable moments deserve the most thoughtful beauty. We design for long-term care communities, hospitals, and wellness centres with the understanding that what surrounds people every day matters deeply, and deserves to be genuinely beautiful and hypoallergenic too.</span>
+          </div>
+        </li>
+        <li class="serve-item">
+          <span class="serve-dot"></span>
+          <div>
+            <span class="serve-title">Landmark &amp; Institutional Spaces</span>
+            <span class="serve-desc">Some spaces carry the weight of many. Universities, museums, airports, arenas, and landmark buildings carry a responsibility to their visitors that goes beyond function. We help them meet that responsibility with installations as worthy of the spaces they are made for.</span>
+          </div>
+        </li>
+      </ul>
     </div>
+  </section>
 
+  <!-- THE CRAFT -->
+  <section id="craft">
+    <div class="craft-grid">
+      <div class="reveal">
+        <p class="section-label">The Craft</p>
+        <div class="thin-rule"></div>
+        <h2 class="section-heading">Made by hand.<br>Crafted with intention.</h2>
+        <p class="body-text">Grand Petal Co. was built on the belief that exceptional spaces deserve exceptional craft. Every bloom is shaped individually from premium organza silk, a material chosen for its luminous quality, its natural movement, and its ability to hold light the way real petals do. The result is an arrangement that arrives ready to elevate any space it enters, available to purchase or rent. No allergens. No maintenance. Only a work of craft, present for every person who moves through your space, and worthy of every glance it receives.</p>
+        <p class="detail-text" style="margin-top:1rem">Primary service area: Kitchener–Waterloo–Cambridge, Ontario. Extended service available throughout Ontario — travel and installation fees apply.</p>
+      </div>
+      <div class="craft-image reveal d1">
+        <img src="img/craft-detail.jpg" alt="Grand Petal Co. silk floral installation detail — blush and coral">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <!-- To activate form submissions: sign up at formspree.io, create a form, and replace YOUR_FORM_ID below -->
+  <section class="form-section" id="inquire">
+    <div class="form-inner">
+      <div class="reveal">
+        <p class="section-label">Check Availability</p>
+        <h2 class="form-heading">Let us design<br>for your space.</h2>
+        <p class="form-sub">We work with a small number of clients at a time. Tell us about your space and we will be in touch within two business days.</p>
+        <p class="form-sub" style="margin-top: 1.25rem; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; color: rgba(196,180,154,0.55);">Every arrangement we create can be tailored to your space and your vision. Come to us with a collection you love, or an idea entirely your own, and we will bring it to life.</p>
+      </div>
+      <div class="reveal d1">
+        <form class="availability-form" action="https://formspree.io/f/xojrgpek" method="POST">
+          <div class="field">
+            <label for="f-name">Full Name</label>
+            <input id="f-name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="f-org">Organization</label>
+            <input id="f-org" name="organization" type="text" placeholder="Company or facility name" required>
+          </div>
+          <div class="field">
+            <label for="f-email">Email Address</label>
+            <input id="f-email" name="email" type="email" placeholder="hello@yourorganization.com" required>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" placeholder="(000) 000-0000">
+          </div>
+          <div class="field">
+            <label for="f-space">Space Type</label>
+            <select id="f-space" name="space_type">
+              <option value="" disabled selected>Select your space</option>
+              <option value="ltc">Long-Term Care Community</option>
+              <option value="corporate">Corporate Office</option>
+              <option value="venue">Hospitality or Event Venue</option>
+              <option value="university">University or Institution</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-collection">Collection of Interest</label>
+            <select id="f-collection" name="collection">
+              <option value="" disabled selected>Select a collection</option>
+              <option>The Garden Reverie</option>
+              <option>The Spring Bloom</option>
+              <option>The Coral Sonnet</option>
+              <option>The Blush Drift</option>
+              <option>The Pearl Vignette</option>
+              <option>The Golden Portrait</option>
+              <option>The Silk Ensemble</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-timeline">Preferred Timeline</label>
+            <input id="f-timeline" name="timeline" type="text" placeholder="e.g. Summer 2026, ASAP, Flexible">
+          </div>
+          <div class="field">
+            <label for="f-location">Space Location</label>
+            <input id="f-location" name="location" type="text" placeholder="City, Ontario">
+          </div>
+          <div class="field full">
+            <label for="f-details">Tell us about your space</label>
+            <textarea id="f-details" name="details" placeholder="Describe the space, approximate dimensions, and what you're hoping to achieve."></textarea>
+          </div>
+          <div class="form-submit full">
+            <button type="submit" class="btn">Send Inquiry</button>
+          </div>
+          <p class="form-note">Every inquiry is personal to us. We will be in touch within two business days.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="/" aria-label="Grand Petal Co.">
+      <img src="img/logo.jpg" alt="Grand Petal Co." class="footer-logo-img">
+    </a>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/grandpetalco/" target="_blank" rel="noopener" class="instagram-link" aria-label="Grand Petal Co. on Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+        </svg>
+        @grandpetalco
+      </a>
+      <a href="mailto:hello@grandpetalco.ca">hello@grandpetalco.ca</a>
+    </div>
+    <span>© 2026 Grand Petal Co. All rights reserved.</span>
+  </footer>
+
+  <!-- COLLECTION MODAL -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-box">
+      <div class="modal-image">
+        <img src="" alt="" id="modal-img">
+      </div>
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+        <span class="modal-num" id="modal-num"></span>
+        <h2 class="modal-title" id="modal-title"></h2>
+        <p class="modal-detail" id="modal-detail"></p>
+        <ul class="modal-specs" id="modal-specs"></ul>
+        <a href="#inquire" class="btn-dark" id="modal-cta">Check Availability</a>
+      </div>
+    </div>
   </div>
-</section>
 
+  <script>
+    const collections = [
+      { num:'I',   name:'The Garden Reverie',       img:'img/garden-reverie.jpg',
+        detail:'Garden Reverie is our signature warm-toned collection. A breathtaking arrangement of oversized hand-crafted silk florals standing 7 ft tall. Each stem is individually crafted from premium organza silk, featuring billowing peonies, open-faced poppies, delicate cosmos, airy Queen Anne\'s lace, and cascading delphinium spires, all mounted on covered bases. Available in our signature warm palette, it can be customized to your event\'s colours on request.',
+        specs:['Height: 7 ft','Width: 4–5 ft across the full arrangement','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+      { num:'II',  name:'The Spring Bloom',    img:'img/wildflower-meadow.jpg',
+        detail:'The Spring Bloom captures the lightness of the season at its most generous. Yellow, blush, fuchsia, and mint, rendered in translucent organza silk, move with the air and hold light the way spring flowers do. A collection that fills a space with quiet joy. Available to purchase or rent, effortless, and entirely its own.',
+        specs:['Height: 7–8 ft on a custom covered base','Width: 3–5 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+      { num:'III', name:'The Coral Sonnet',         img:'img/moody-garden.jpg',
+        detail:'Rich in colour, deliberate in composition. The Coral Sonnet is warmth distilled into a single, unforgettable arrangement. A blush poppy and terracotta peony rise above cascading delphinium and ivory berry stems, with a delicate cosmos woven between, each stem crafted in premium organza silk, mounted on a covered base, and composed to stop anyone who passes it.',
+        specs:['Height: 7–8 ft on a custom covered base','Width: 3–4 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+      { num:'IV',  name:'The Blush Drift',     img:'img/lavender-reverie.jpg',
+        detail:'The Blush Drift moves through a palette of soft lavender, dusty pink, and blush with the ease of something entirely natural. Soft lavender peonies, dusty rose peonies, pink cosmos, cascading delphinium, and delicate Queen Anne\'s lace, each stem individually handcrafted in premium organza silk. A composition that is tender in colour and generous in presence, mounted on a covered base and crafted to feel like the first light of morning, every single day.',
+        specs:['Height: 7–8 ft on a custom covered base','Width: 3–5 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+      { num:'V',   name:'The Pearl Vignette',          img:'img/grand-blanc.jpg',
+        detail:'The Pearl Vignette does not compete for attention. It simply deserves it. White peonies, a single blush poppy, airy Queen Anne\'s lace, and delicate berry stems, each handcrafted in premium organza silk and mounted on a covered base. A composition that is intimate in form and infinite in elegance, the kind of detail that tells your guests everything about the spaces you keep.',
+        specs:['Height: 7–8 ft on a custom covered base','Width: 3–4 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+      { num:'VI',  name:'The Golden Portrait',         img:'img/golden-grove.jpg',
+        detail:'The Golden Portrait is confidence distilled into its purest form. A trio of oversized daffodils, each petal handcrafted in translucent golden organza silk, rise together in a composition that is as deliberate as it is breathtaking. Sunlit in colour, architectural in presence, and entirely unmistakable. For spaces that understand the power of doing one thing, and doing it beautifully.',
+        specs:['Height: 7–8 ft on a custom covered base','Width: 2–4 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+      { num:'VII', name:'The Silk Ensemble', img:'img/full-bloom.jpg',
+        detail:'Some spaces deserve everything. The Silk Ensemble is a curated gathering of our most beloved blooms, composed in a palette that feels at once abundant and considered. Peonies, cosmos, delphinium, and the finest of fillers, each handcrafted in premium organza silk and woven together into a world entirely of their own.',
+        specs:['Height: 7–8 ft on a custom covered base','Width: 5–8 ft (fully custom)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Custom composition — each piece unique','Available for purchase or rental'] }
+    ];
 
-<!-- ═══════════════════════════════════════════════════════
-     PROCESS
-═══════════════════════════════════════════════════════════ -->
-<section id="process">
-  <div class="section-header reveal">
-    <span class="label">How It Works</span>
-    <span class="gold-rule"></span>
-    <h2>Simple by design.<br><em>Extraordinary by result.</em></h2>
-  </div>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive:true });
 
-  <div class="process-steps">
-    <div class="process-step reveal">
-      <div class="step-num">01</div>
-      <h3>Tell Us About Your Event</h3>
-      <p>Share your event date, venue, and vision. We respond within 24 hours to learn more and confirm availability.</p>
-    </div>
-    <div class="process-step reveal reveal-delay-2">
-      <div class="step-num">02</div>
-      <h3>We Design Together</h3>
-      <p>We recommend the collection and configuration that best fits your space, palette, and occasion. No guesswork on your end.</p>
-    </div>
-    <div class="process-step reveal reveal-delay-3">
-      <div class="step-num">03</div>
-      <h3>We Handle Everything</h3>
-      <p>We deliver, set up, and install. Your team arrives to a finished space — exactly as envisioned.</p>
-    </div>
-    <div class="process-step reveal reveal-delay-4">
-      <div class="step-num">04</div>
-      <h3>You Take the Moment</h3>
-      <p>Your guests are moved. The photos are stunning. We return for takedown — quietly, completely, on your schedule.</p>
-    </div>
-  </div>
-</section>
+    // Reveal on scroll
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    setTimeout(() => {
+      document.querySelectorAll('.hero .reveal').forEach((el, i) => setTimeout(() => el.classList.add('visible'), i * 160));
+    }, 200);
 
+    // Modal
+    const modal    = document.getElementById('modal');
+    const backdrop = document.getElementById('modal-backdrop');
+    const closeBtn = document.getElementById('modal-close');
 
-<!-- ═══════════════════════════════════════════════════════
-     GALLERY STRIP (swap placeholders with real photos)
-═══════════════════════════════════════════════════════════ -->
-<section id="gallery">
-  <div class="gallery-strip">
-    <div class="gallery-strip-img"><div class="img-placeholder" style="background:linear-gradient(135deg,#C4B49A,#8B7355)" data-label=""></div></div>
-    <div class="gallery-strip-img"><div class="img-placeholder" style="background:linear-gradient(135deg,#8B7355,#C4A96A)" data-label=""></div></div>
-    <div class="gallery-strip-img"><div class="img-placeholder" style="background:linear-gradient(135deg,#EDE6DC,#C4B49A)" data-label=""></div></div>
-    <div class="gallery-strip-img"><div class="img-placeholder" style="background:linear-gradient(135deg,#C4A96A,#8B6B30)" data-label=""></div></div>
-    <div class="gallery-strip-img"><div class="img-placeholder" style="background:linear-gradient(135deg,#4A4A4A,#8B7355)" data-label=""></div></div>
-  </div>
-</section>
+    function openModal(i) {
+      const c = collections[i];
+      document.getElementById('modal-img').src        = c.img;
+      document.getElementById('modal-img').alt        = c.name;
+      document.getElementById('modal-num').textContent   = c.num;
+      document.getElementById('modal-title').textContent = c.name;
+      document.getElementById('modal-detail').textContent= c.detail;
+      document.getElementById('modal-specs').innerHTML   = c.specs.map(s => `<li>${s}</li>`).join('');
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
 
+    function closeModal() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
 
-<!-- ═══════════════════════════════════════════════════════
-     FAQ
-═══════════════════════════════════════════════════════════ -->
-<section id="faq">
-  <div class="section-header reveal">
-    <span class="label">Common Questions</span>
-    <span class="gold-rule"></span>
-    <h2>Everything you need<br><em>to feel confident</em></h2>
-  </div>
-
-  <div class="faq-wrap">
-
-    <div class="faq-item reveal">
-      <div class="faq-q">
-        <h3>Are your flowers real or artificial?</h3>
-        <div class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      </div>
-      <div class="faq-a"><p>Every flower is handcrafted from premium organza silk — chosen specifically for its lifelike texture, movement, and beauty. The result is indistinguishable from fresh florals at a distance, with the added benefit of zero allergens, zero wilting, and the ability to be used across multiple events.</p></div>
-    </div>
-
-    <div class="faq-item reveal reveal-delay-1">
-      <div class="faq-q">
-        <h3>Do you offer rentals as well as purchase?</h3>
-        <div class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      </div>
-      <div class="faq-a"><p>Yes — and our rental model is one of our most popular options, especially for corporate clients and venues. You receive the full visual impact of a grand installation without the full cost of ownership. We also offer recurring rental contracts for clients who want a consistent, rotating presence throughout the year.</p></div>
-    </div>
-
-    <div class="faq-item reveal reveal-delay-2">
-      <div class="faq-q">
-        <h3>How far in advance should I book?</h3>
-        <div class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      </div>
-      <div class="faq-a"><p>We recommend reaching out at least 3 to 4 weeks before your event to ensure availability and allow time for any custom design decisions. For larger installations or events during peak seasons, earlier is always better. That said, we will always do our best to accommodate last-minute requests.</p></div>
-    </div>
-
-    <div class="faq-item reveal reveal-delay-1">
-      <div class="faq-q">
-        <h3>What areas do you serve?</h3>
-        <div class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      </div>
-      <div class="faq-a"><p>We are based in the Kitchener-Waterloo-Cambridge region and serve the surrounding areas including Guelph, Brantford, Hamilton, and the Greater Toronto Area. Not sure if we cover your location? Reach out and we will do our best to make it work.</p></div>
-    </div>
-
-    <div class="faq-item reveal reveal-delay-2">
-      <div class="faq-q">
-        <h3>Can you match our event colours or theme?</h3>
-        <div class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      </div>
-      <div class="faq-a"><p>Absolutely. While each of our named collections carries its own distinct palette, we work closely with every client to ensure the installation feels native to their event. Share your colours, mood board, or theme — and we will guide you toward the right fit, or discuss custom options where appropriate.</p></div>
-    </div>
-
-    <div class="faq-item reveal reveal-delay-1">
-      <div class="faq-q">
-        <h3>Are your installations safe for allergy-sensitive environments?</h3>
-        <div class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      </div>
-      <div class="faq-a"><p>Yes — completely. Because our flowers are crafted from premium organza silk, they produce zero pollen, zero fragrance, and zero allergens. This makes our installations ideal for healthcare environments, corporate offices, and any venue where guest comfort is a priority.</p></div>
-    </div>
-
-    <div class="faq-item reveal reveal-delay-2">
-      <div class="faq-q">
-        <h3>Do you handle setup and takedown?</h3>
-        <div class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 2v8M2 6h8" stroke="#8B7355" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-      </div>
-      <div class="faq-a"><p>Yes — always. We deliver, set up, and install every piece ourselves, and return to take everything down at the agreed time. Your team has nothing to manage before, during, or after. That is part of the service.</p></div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════
-     CONTACT / CTA
-═══════════════════════════════════════════════════════════ -->
-<section id="contact">
-  <div class="contact-wrap">
-    <span class="label reveal">Check Availability</span>
-    <span class="gold-rule reveal"></span>
-    <h2 class="reveal">Let's create something<br><em>worth remembering</em></h2>
-    <p class="reveal">Tell us a little about your event and we will be in touch within 24 hours to confirm availability and begin the conversation.</p>
-
-    <form class="contact-form reveal" action="https://formspree.io/f/mdajkdnj" method="POST">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required />
-        </div>
-        <div class="form-group">
-          <label for="org">Company / Venue</label>
-          <input type="text" id="org" name="organization" placeholder="Organisation name" />
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="hello@company.com" required />
-        </div>
-        <div class="form-group">
-          <label for="date">Event Date</label>
-          <input type="date" id="date" name="event_date" />
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="type">Event Type</label>
-        <select id="type" name="event_type">
-          <option value="" disabled selected>Select event type</option>
-          <option>Corporate Event</option>
-          <option>Wedding or Celebration</option>
-          <option>Venue / Lobby Installation</option>
-          <option>Cultural or Community Event</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">Tell Us More</label>
-        <textarea id="message" name="message" placeholder="Venue, guest count, colour palette, vision — anything helps..."></textarea>
-      </div>
-      <div class="form-submit">
-        <button type="submit">Check Availability</button>
-      </div>
-    </form>
-    <p class="form-note reveal">Or reach us directly at <a href="mailto:info@grandpetalco.ca" style="color:var(--gold-brown)">info@grandpetalco.ca</a> &nbsp;·&nbsp; <a href="https://instagram.com/grandpetalco" target="_blank" style="color:var(--gold-brown)">@grandpetalco</a></p>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════
-     FOOTER
-═══════════════════════════════════════════════════════════ -->
-<footer>
-  <div class="footer-logo" style="position:relative;padding-bottom:12px;display:inline-block;margin-bottom:16px;">
-    Grand Petal Co.
-    <span style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:28px;height:1px;background:#C4A96A;display:block;"></span>
-  </div>
-  <p class="footer-tagline">Floral Architecture for Extraordinary Events</p>
-  <ul class="footer-links">
-    <li><a href="#about">Our Story</a></li>
-    <li><a href="#collections">Collections</a></li>
-    <li><a href="#serve">Who We Serve</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="https://instagram.com/grandpetalco" target="_blank">Instagram</a></li>
-    <li><a href="mailto:info@grandpetalco.ca">Contact</a></li>
-  </ul>
-  <div class="footer-rule"></div>
-  <p class="footer-location">Serving Kitchener · Waterloo · Cambridge · Guelph · Brantford · Hamilton · GTA</p>
-  <p class="footer-copy">&copy; 2025 Grand Petal Co. All rights reserved.</p>
-</footer>
-
-
-<!-- ═══════════════════════════════════════════════════════
-     JAVASCRIPT
-═══════════════════════════════════════════════════════════ -->
-<script>
-  // Nav scroll state
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-  });
-
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+    document.querySelectorAll('.card[data-collection]').forEach(card => {
+      card.addEventListener('click', () => openModal(parseInt(card.dataset.collection)));
     });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
 
-  // FAQ accordion
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    document.getElementById('modal-cta').addEventListener('click', () => {
+      closeModal();
+      setTimeout(() => document.getElementById('inquire').scrollIntoView({ behavior:'smooth' }), 300);
     });
-  });
-
-  // Fix back button — prevent anchor links from stacking browser history
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-        history.replaceState(null, null, this.getAttribute('href'));
-      }
-    });
-  });
-</script>
-
+  </script>
 </body>
 </html>
