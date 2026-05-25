@@ -594,9 +594,7 @@
       const c = collections[i];
       modalImg.src    = c.img;
       modalImg.alt    = c.name;
-      // Use contain for landscape images (Silk Ensemble)
       if (i === 6) { modalImg.classList.add('contain'); } else { modalImg.classList.remove('contain'); }
-      // Golden Portrait — show full flower from top
       modalImg.style.objectPosition = (i === 5) ? 'center top' : 'center center';
       document.getElementById('modal-num').textContent   = c.num;
       document.getElementById('modal-title').textContent = c.name;
@@ -605,13 +603,28 @@
       modal.classList.add('active');
       modal.setAttribute('aria-hidden','false');
       document.body.style.overflow = 'hidden';
+      // Push state so mobile back button closes modal instead of leaving page
+      history.pushState({ modal: true, collection: i }, '', '#collection-' + i);
     }
 
     function closeModal() {
       modal.classList.remove('active');
       modal.setAttribute('aria-hidden','true');
       document.body.style.overflow = '';
+      // If we pushed a state, go back without triggering popstate loop
+      if (location.hash.startsWith('#collection-')) {
+        history.replaceState(null, '', location.pathname);
+      }
     }
+
+    // Handle mobile back button
+    window.addEventListener('popstate', (e) => {
+      if (modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+      }
+    });
 
     document.querySelectorAll('.card[data-collection]').forEach(card => {
       card.addEventListener('click', () => openModal(parseInt(card.dataset.collection)));
