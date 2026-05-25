@@ -28,13 +28,13 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       display: flex; justify-content: space-between; align-items: center;
-      padding: 2rem 4rem;
+      padding: 1.5rem 4rem;
       transition: background 0.5s ease, padding 0.4s ease, border-color 0.5s ease;
       border-bottom: 1px solid transparent;
     }
     nav.scrolled {
       background: rgba(245,240,235,0.96); backdrop-filter: blur(12px);
-      padding: 1.25rem 4rem; border-color: rgba(196,169,106,0.18);
+      padding: 1rem 4rem; border-color: rgba(196,169,106,0.18);
     }
     .nav-logo {
       font-family: var(--serif); font-weight: 300; font-size: 1.2rem;
@@ -44,7 +44,7 @@
     nav.scrolled .nav-logo { color: var(--black); }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
-      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
       color: rgba(245,240,235,0.85); text-decoration: none;
       position: relative; padding-bottom: 3px; transition: color 0.5s ease;
     }
@@ -61,6 +61,7 @@
       display: flex; flex-direction: column; justify-content: flex-end;
       padding: 0 4rem 5rem; overflow: hidden;
     }
+    .hero-content { position: relative; z-index: 1; max-width: 680px; padding-top: 220px; }
     .hero-media { position: absolute; inset: 0; z-index: 0; }
     .hero-media video, .hero-media img.hero-fallback {
       width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
@@ -73,14 +74,13 @@
       position: absolute; top: 20%; right: 4rem; width: 1px; height: 30vh;
       background: linear-gradient(to bottom, transparent, rgba(196,169,106,0.5), transparent); z-index: 1;
     }
-    .hero-content { position: relative; z-index: 1; max-width: 680px; }
     .hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.75rem; }
     .hero-headline {
       font-family: var(--serif); font-style: italic; font-weight: 300;
       font-size: clamp(2.4rem, 4.2vw, 4.2rem); line-height: 1.06;
       color: var(--cream); margin-bottom: 2.25rem; letter-spacing: -0.01em;
     }
-    .hero-sub { font-size: 0.97rem; line-height: 1.9; letter-spacing: 0.02em; color: rgba(245,240,235,0.8); max-width: 44ch; margin-bottom: 3rem; }
+    .hero-sub { font-size: 1.1rem; line-height: 1.9; letter-spacing: 0.02em; color: rgba(245,240,235,0.8); max-width: 44ch; margin-bottom: 3rem; }
     .link-arrow { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; padding-bottom: 3px; transition: opacity 0.3s; }
     .link-arrow:hover { opacity: 0.7; }
     .link-arrow-light { color: var(--cream); border-bottom: 1px solid rgba(196,169,106,0.7); }
@@ -90,38 +90,27 @@
       letter-spacing: 0.25em; text-transform: uppercase;
       color: rgba(245,240,235,0.5); writing-mode: vertical-rl; z-index: 1;
     }
-    .hero-logo-mark {
-      width: 155px; height: 155px; object-fit: cover; object-position: center top;
-      mix-blend-mode: screen; margin-bottom: 2rem; display: block;
-      opacity: 0.95;
+    .nav-logo-img-top {
+      height: 140px; width: auto; display: block;
+      transition: opacity 0.4s ease;
+      filter: brightness(1.1);
     }
-    .footer-logo-img {
-      height: 72px; width: auto; display: block; opacity: 0.88;
-      transition: opacity 0.3s;
-    }
-    .footer-logo-img:hover { opacity: 1; }
+    nav.scrolled .nav-logo-img-top { filter: brightness(0.75) sepia(0.3); }
+    .nav-logo-link { display: flex; align-items: center; }
+    .footer-logo { font-family: var(--serif); font-weight: 300; font-size: 1rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,240,235,0.75); text-decoration: none; }
     .nav-logo-img {
       height: 36px; width: auto; display: none; mix-blend-mode: screen; opacity: 0.9;
     }
 
     /* BANNER */
-    .banner-section {
-      width: 100%;
-      line-height: 0;
-    }
-    .banner-section img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
 
     /* SHARED */
     section { padding: 8rem 4rem; }
-    .section-label { font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 2rem; }
+    .section-label { font-size: 0.85rem; letter-spacing: 0.26em; text-transform: uppercase; color: #6B5A42; margin-bottom: 2rem; }
     .two-col { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 7rem; align-items: start; }
-    .section-heading { font-family: var(--serif); font-weight: 300; font-size: clamp(1.55rem, 2.4vw, 2.4rem); line-height: 1.2; color: var(--black); margin-bottom: 2.25rem; }
-    .body-text { font-size: 0.97rem; line-height: 2; color: var(--body); margin-bottom: 1.5rem; }
-    .detail-text { font-size: 0.88rem; letter-spacing: 0.07em; color: var(--grey); line-height: 1.9; }
+    .section-heading { font-family: var(--serif); font-weight: 300; font-size: clamp(2.2rem, 3.5vw, 3.5rem); line-height: 1.2; color: var(--black); margin-bottom: 2.25rem; }
+    .body-text { font-size: 1.1rem; line-height: 2.1; color: var(--body); margin-bottom: 1.5rem; }
+    .detail-text { font-size: 0.95rem; letter-spacing: 0.06em; color: #6B5A42; line-height: 1.9; }
     .thin-rule { width: 36px; height: 1px; background: var(--gold); margin-bottom: 2rem; }
 
     /* COLLECTIONS */
@@ -143,8 +132,8 @@
     .card:hover::before { background: linear-gradient(to top, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.55) 55%, rgba(26,26,26,0.15) 100%); }
     .card-inner { position: absolute; bottom: 0; left: 0; right: 0; padding: 2.5rem 2.25rem; z-index: 2; }
     .card-num { font-family: var(--serif); font-style: italic; font-size: 0.78rem; color: var(--gold); display: block; margin-bottom: 0.75rem; }
-    .card-title { font-family: var(--serif); font-weight: 300; font-size: 1.15rem; color: var(--cream); line-height: 1.25; margin-bottom: 0.75rem; }
-    .card-brief { font-size: 0.9rem; line-height: 1.75; color: rgba(245,240,235,0.7); margin-bottom: 1.25rem; max-width: 38ch; }
+    .card-title { font-family: var(--serif); font-weight: 300; font-size: 1.3rem; color: var(--cream); line-height: 1.25; margin-bottom: 0.75rem; }
+    .card-brief { font-size: 1.0rem; line-height: 1.85; color: rgba(245,240,235,0.8); margin-bottom: 1.25rem; max-width: 38ch; }
     .card-cta { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); opacity: 0; transform: translateY(6px); transition: opacity 0.35s ease, transform 0.35s ease; }
     .card:hover .card-cta { opacity: 1; transform: translateY(0); }
 
@@ -156,8 +145,8 @@
     .serve-item { display: flex; gap: 1.75rem; align-items: flex-start; padding: 1.75rem 0; border-bottom: 1px solid rgba(196,180,154,0.18); }
     .serve-item:first-child { border-top: 1px solid rgba(196,180,154,0.18); }
     .serve-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; margin-top: 0.55rem; flex-shrink: 0; }
-    .serve-title { font-family: var(--serif); font-size: 1.15rem; color: var(--cream); display: block; margin-bottom: 0.35rem; }
-    .serve-desc { font-size: 0.9rem; color: rgba(196,180,154,0.65); line-height: 1.8; }
+    .serve-title { font-family: var(--serif); font-size: 1.3rem; color: var(--cream); display: block; margin-bottom: 0.35rem; }
+    .serve-desc { font-size: 0.85rem; color: rgba(196,180,154,0.65); line-height: 1.8; }
 
     /* CRAFT */
     .craft-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr; gap: 7rem; align-items: center; }
@@ -169,16 +158,16 @@
     .form-section .section-label { color: var(--gold); }
     .form-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.6fr; gap: 7rem; align-items: start; }
     .form-heading { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: clamp(1.65rem, 2.8vw, 2.8rem); color: var(--cream); line-height: 1.15; margin-bottom: 1.5rem; }
-    .form-sub { font-size: 0.92rem; line-height: 1.9; color: rgba(196,180,154,0.65); }
+    .form-sub { font-size: 1.05rem; line-height: 1.9; color: rgba(196,180,154,0.8); }
     .availability-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; }
     .field { position: relative; margin-bottom: 2rem; }
     .field.full { grid-column: 1 / -1; }
-    .field label { display: block; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .field label { display: block; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
     .field input, .field select, .field textarea {
       width: 100%; background: transparent; border: none;
       border-bottom: 1px solid rgba(196,169,106,0.25);
-      padding: 0.6rem 0; font-family: var(--sans); font-weight: 300;
-      font-size: 0.85rem; color: var(--cream); outline: none;
+      padding: 0.75rem 0; font-family: var(--sans); font-weight: 300;
+      font-size: 1.0rem; color: var(--cream); outline: none;
       transition: border-color 0.3s ease; -webkit-appearance: none; appearance: none; border-radius: 0;
     }
     .field select { cursor: pointer; }
@@ -189,14 +178,14 @@
     .form-submit { grid-column: 1 / -1; margin-top: 1rem; }
     .btn {
       display: inline-block; font-family: var(--sans); font-weight: 400;
-      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase;
       color: var(--cream); background: transparent;
       border: 1px solid rgba(196,169,106,0.4);
-      padding: 1.15rem 2.75rem; cursor: pointer;
+      padding: 1.35rem 3.25rem; cursor: pointer;
       transition: background 0.35s ease, border-color 0.35s ease; text-decoration: none;
     }
     .btn:hover { background: rgba(196,169,106,0.12); border-color: var(--gold); }
-    .form-note { font-size: 0.82rem; color: rgba(196,180,154,0.4); margin-top: 1.5rem; line-height: 1.7; grid-column: 1 / -1; }
+    .form-note { font-size: 0.92rem; color: rgba(196,180,154,0.6); margin-top: 1.5rem; line-height: 1.7; grid-column: 1 / -1; }
 
     /* FOOTER */
     footer {
@@ -205,10 +194,10 @@
       font-size: 0.7rem; letter-spacing: 0.08em; border-top: 1px solid rgba(196,169,106,0.1);
     }
     .footer-logo { font-family: var(--serif); font-weight: 300; font-size: 0.95rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(245,240,235,0.75); text-decoration: none; }
-    .footer-links { display: flex; gap: 2rem; align-items: center; }
+    .footer-links { display: flex; gap: 2.5rem; align-items: center; }
     footer a { color: rgba(245,240,235,0.35); text-decoration: none; transition: color 0.3s; }
     footer a:hover { color: var(--gold); }
-    .instagram-link { display: flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; letter-spacing: 0.12em; }
+    .instagram-link { display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem; letter-spacing: 0.1em; }
     .instagram-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.5; flex-shrink: 0; }
 
     /* MODAL */
@@ -219,14 +208,17 @@
     .modal.active .modal-box { transform: translateY(0); }
     .modal-image { overflow: hidden; max-height: 88vh; }
     .modal-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .modal-image img.contain { object-fit: contain; background: var(--cream); }
     .modal-content { padding: 3.5rem 3rem 3rem; overflow-y: scroll; display: flex; flex-direction: column; max-height: 88vh; -webkit-overflow-scrolling: touch; }
     .modal-close { position: absolute; top: 1.25rem; right: 1.25rem; background: none; border: none; font-size: 1.75rem; color: var(--cream); cursor: pointer; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; z-index: 10; opacity: 0.7; transition: opacity 0.3s; font-family: var(--serif); font-weight: 300; line-height: 1; }
     .modal-close:hover { opacity: 1; }
     .modal-num { font-family: var(--serif); font-style: italic; font-size: 0.8rem; color: var(--gold); display: block; margin-bottom: 0.6rem; }
-    .modal-title { font-family: var(--serif); font-weight: 300; font-size: 1.7rem; color: var(--black); line-height: 1.2; margin-bottom: 1.75rem; }
-    .modal-detail { font-size: 0.92rem; line-height: 2; color: var(--body); margin-bottom: 2rem; flex: 1; }
+    .modal-title { font-family: var(--serif); font-weight: 300; font-size: 2rem; color: var(--black); line-height: 1.2; margin-bottom: 1.75rem; }
+    .modal-detail { font-size: 1.0rem; line-height: 2; color: var(--body); margin-bottom: 2rem; flex: 1; }
     .modal-specs { list-style: none; margin-bottom: 2.5rem; border-top: 1px solid rgba(196,169,106,0.2); padding-top: 1.5rem; }
-    .modal-specs li { font-size: 0.73rem; letter-spacing: 0.06em; color: var(--gold-dark); padding: 0.4rem 0; border-bottom: 1px solid rgba(196,169,106,0.12); display: flex; gap: 0.75rem; align-items: center; }
+    .modal-specs li { font-size: 0.78rem; letter-spacing: 0.06em; color: var(--gold-dark); padding: 0.4rem 0; border-bottom: 1px solid rgba(196,169,106,0.12); display: flex; gap: 0.75rem; align-items: center; }
+    .modal-specs li:first-child { font-size: 1.0rem; color: var(--black); font-family: var(--serif); letter-spacing: 0.04em; border-bottom: 1px solid rgba(196,169,106,0.3); padding-bottom: 0.75rem; margin-bottom: 0.25rem; }
+    .modal-specs li:first-child::before { background: var(--gold); width: 5px; height: 5px; }
     .modal-specs li::before { content: ''; width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
     .btn-dark { background: var(--black); color: var(--cream); border: none; display: inline-block; font-family: var(--sans); font-weight: 400; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.1rem 2.5rem; cursor: pointer; text-decoration: none; transition: background 0.35s ease; align-self: flex-start; }
     .btn-dark:hover { background: var(--gold-dark); }
@@ -269,9 +261,8 @@
 
   <!-- NAVIGATION -->
   <nav id="nav">
-    <a class="nav-logo" href="/">Grand Petal Co.</a>
-    <a href="/" aria-label="Grand Petal Co." class="nav-logo-img-link">
-      <img src="img/logo.jpg" alt="Grand Petal Co." class="nav-logo-img">
+    <a href="/" class="nav-logo-link" aria-label="Grand Petal Co.">
+      <img src="img/logo-gold.png" alt="Grand Petal Co." class="nav-logo-img-top" id="nav-logo-img">
     </a>
     <ul class="nav-links">
       <li><a href="#collections">Collections</a></li>
@@ -289,19 +280,13 @@
     </div>
     <div class="hero-line"></div>
     <div class="hero-content">
-      <img src="img/logo.jpg" alt="Grand Petal Co." class="hero-logo-mark reveal" style="display:none;">
-      <p class="hero-eyebrow reveal">Kitchener–Waterloo–Cambridge · Ontario</p>
-      <h1 class="hero-headline reveal d1">The art of<br>floral architecture,<br>handcrafted in silk</h1>
+      <h1 class="hero-headline reveal">The art of<br>floral architecture,<br>handcrafted in silk</h1>
       <p class="hero-sub reveal d2">Handcrafted silk floral installations of exceptional scale, built for spaces that demand presence.</p>
+      <p class="hero-eyebrow reveal d2" style="margin-bottom: 2rem; margin-top: -1rem;">Kitchener · Waterloo · Cambridge · Toronto · Ontario</p>
       <a href="#inquire" class="link-arrow link-arrow-light reveal d3">Check availability</a>
     </div>
     <span class="hero-scroll" aria-hidden="true">Scroll</span>
   </section>
-
-  <!-- BANNER -->
-  <div class="banner-section">
-    <img src="img/banner.png" alt="Grand Petal Co. — Giant Handmade Floral Architecture">
-  </div>
 
   <!-- STATEMENT -->
   <section>
@@ -309,11 +294,11 @@
       <div class="reveal">
         <p class="section-label">The Work</p>
         <div class="thin-rule"></div>
-        <p class="detail-text">Each installation is hand-crafted from premium organza silk, rising over seven feet tall on custom architectural bases, built to define a space.</p>
+        <p class="detail-text" style="font-size:1.05rem; line-height:1.9;">Each installation is hand-crafted from premium materials, rising over seven feet tall on custom architectural bases, built to define a space.</p>
       </div>
       <div class="reveal d1">
         <h2 class="section-heading">Not floristry.<br>Not décor.<br>Floral architecture.</h2>
-        <p class="body-text">Grand Petal Co. brings a standard of craftsmanship and artistry to large-scale floral design that commercial spaces truly deserve. Our silk floral installations are crafted to the standard of fine art, hypoallergenic and maintenance-free, season after season.</p>
+        <p class="body-text">Grand Petal Co. brings a standard of craftsmanship and artistry to large-scale floral design that spaces truly deserve. Our silk floral installations are crafted to the standard of fine art, hypoallergenic and maintenance-free, season after season.</p>
         <p class="body-text">Every piece is designed as a defining feature of its space, carrying the visual weight of a commissioned sculpture with the freedom to evolve as your space does.</p>
       </div>
     </div>
@@ -324,7 +309,7 @@
     <div class="collections-header">
       <p class="section-label reveal">The Collections</p>
       <h2 class="section-heading reveal d1" style="max-width: 20ch;">Explore our collections. Every one a statement in silk.</h2>
-      <p class="body-text reveal d2" style="max-width: 52ch; margin-top: 1.5rem; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.05rem;">Every Grand Petal Co. arrangement can be created to your vision. Whether you are drawn to one of our named collections or have a colour, a mood, or a space in mind, we will design something entirely your own. Your vision, your palette, your space, brought to life in the finest premium materials.</p>
+      <p class="body-text reveal d2" style="max-width: 52ch; margin-top: 1.5rem; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.1rem;">Every Grand Petal Co. arrangement can be created to your vision. Whether you are drawn to one of our named collections or have a colour, a mood, or a space in mind, we will design something entirely your own. Your vision, your palette, your space, brought to life in the finest premium materials.</p>
     </div>
     <div class="collections-grid">
       <div class="card reveal" style="background-image:url('img/garden-reverie.jpg')" data-collection="0">
@@ -375,7 +360,7 @@
           <span class="card-cta">View details →</span>
         </div>
       </div>
-      <div class="card reveal" style="background-image:url('img/full-bloom.jpg');background-position:center 30%" data-collection="6">
+      <div class="card reveal" style="background-image:url('img/full-bloom.jpg');background-position:center top;background-size:cover;" data-collection="6">
         <div class="card-inner">
           <span class="card-num">VII</span>
           <h3 class="card-title">The Silk Ensemble</h3>
@@ -392,7 +377,7 @@
       <div class="reveal">
         <p class="section-label">Who We Work With</p>
         <div class="thin-rule" style="background:rgba(196,169,106,0.4)"></div>
-        <h2 class="section-heading" style="font-size:clamp(1.4rem,2.2vw,2.1rem)">We work with spaces that carry presence. Grand entrance halls, architectural atriums, refined reception areas, curated communal spaces, and the celebrated corridors where presence is everything. If your space welcomes people, we want to make it truly unforgettable.</h2>
+        <h2 class="section-heading" style="font-size:clamp(1.0rem,1.5vw,1.35rem)">We work with spaces that carry presence. Grand entrance halls, architectural atriums, refined reception areas, curated communal spaces, and the celebrated corridors where presence is everything. If your space welcomes people, we want to make it truly unforgettable.</h2>
       </div>
       <ul class="serve-list reveal d1">
         <li class="serve-item">
@@ -441,11 +426,11 @@
         <p class="section-label">The Craft</p>
         <div class="thin-rule"></div>
         <h2 class="section-heading">Made by hand.<br>Crafted with intention.</h2>
-        <p class="body-text">Grand Petal Co. was built on the belief that exceptional spaces deserve exceptional craft. Every bloom is shaped individually from premium organza silk, a material chosen for its luminous quality, its natural movement, and its ability to hold light the way real petals do. The result is an arrangement that arrives ready to elevate any space it enters, available to purchase or rent. No allergens. No maintenance. Only a work of craft, present for every person who moves through your space, and worthy of every glance it receives.</p>
-        <p class="detail-text" style="margin-top:1rem">Primary service area: Kitchener–Waterloo–Cambridge, Ontario. Extended service available throughout Ontario — travel and installation fees apply.</p>
+        <p class="body-text">Grand Petal Co. was built on the belief that exceptional spaces deserve exceptional craft. Every bloom is shaped individually from premium materials, a material chosen for its luminous quality, its natural movement, and its ability to hold light the way real petals do. The result is an arrangement that arrives ready to elevate any space it enters, available to purchase or rent. No allergens. No maintenance. Only a work of craft, present for every person who moves through your space, and worthy of every glance it receives.</p>
+        <p class="detail-text" style="margin-top:1rem">Based in Waterloo Region, serving Kitchener, Waterloo, and Cambridge. Available throughout the Greater Toronto Area and across Ontario. Extended travel available province-wide — contact us to discuss your location.</p>
       </div>
       <div class="craft-image reveal d1">
-        <img src="img/craft-detail.jpg" alt="Grand Petal Co. silk floral installation detail — blush and coral">
+        <img src="img/craft-detail.jpg" alt="Grand Petal Co. — handcrafted silk florals" style="object-position: center top;">
       </div>
     </div>
   </section>
@@ -458,7 +443,7 @@
         <p class="section-label">Check Availability</p>
         <h2 class="form-heading">Let us design<br>for your space.</h2>
         <p class="form-sub">We work with a small number of clients at a time. Tell us about your space and we will be in touch within two business days.</p>
-        <p class="form-sub" style="margin-top: 1.25rem; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; color: rgba(196,180,154,0.55);">Every arrangement we create can be tailored to your space and your vision. Come to us with a collection you love, or an idea entirely your own, and we will bring it to life.</p>
+        <p class="form-sub" style="margin-top: 1.25rem; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.2rem; color: rgba(196,180,154,0.8);">Every arrangement we create can be tailored to your space and your vision. Come to us with a collection you love, or an idea entirely your own, and we will bring it to life.</p>
       </div>
       <div class="reveal d1">
         <form class="availability-form" action="https://formspree.io/f/xojrgpek" method="POST">
@@ -527,7 +512,7 @@
   <!-- FOOTER -->
   <footer>
     <a href="/" aria-label="Grand Petal Co.">
-      <img src="img/logo.jpg" alt="Grand Petal Co." class="footer-logo-img">
+      <img src="img/logo-gold.png" alt="Grand Petal Co." style="height:90px;width:auto;display:block;opacity:0.85;transition:opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85">
     </a>
     <div class="footer-links">
       <a href="https://www.instagram.com/grandpetalco/" target="_blank" rel="noopener" class="instagram-link" aria-label="Grand Petal Co. on Instagram">
@@ -538,7 +523,7 @@
         </svg>
         @grandpetalco
       </a>
-      <a href="mailto:hello@grandpetalco.ca">hello@grandpetalco.ca</a>
+      <a href="mailto:info@grandpetalco.ca" style="font-size:0.88rem; letter-spacing:0.06em;">info@grandpetalco.ca</a>
     </div>
     <span>© 2026 Grand Petal Co. All rights reserved.</span>
   </footer>
@@ -564,26 +549,26 @@
   <script>
     const collections = [
       { num:'I',   name:'The Garden Reverie',       img:'img/garden-reverie.jpg',
-        detail:'Garden Reverie is our signature warm-toned collection. A breathtaking arrangement of oversized hand-crafted silk florals standing 7 ft tall. Each stem is individually crafted from premium organza silk, featuring billowing peonies, open-faced poppies, delicate cosmos, airy Queen Anne\'s lace, and cascading delphinium spires, all mounted on covered bases. Available in our signature warm palette, it can be customized to your event\'s colours on request.',
-        specs:['Height: 7 ft','Width: 4–5 ft across the full arrangement','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+        detail:'Garden Reverie is our signature warm-toned collection. A breathtaking arrangement of oversized hand-crafted silk florals standing 7 ft tall. Each stem is individually crafted from premium materials, featuring billowing peonies, open-faced poppies, delicate cosmos, airy Queen Anne\'s lace, and cascading delphinium spires, all mounted on covered bases. Available in our signature warm palette, it can be customized to your event\'s colours on request.',
+        specs:['Rental: C$1,099 per event','Height: 7 ft','Width: 4–5 ft across the full arrangement','Fully hypoallergenic','No maintenance required','Delivery and installation quoted separately'] },
       { num:'II',  name:'The Spring Bloom',    img:'img/wildflower-meadow.jpg',
-        detail:'The Spring Bloom captures the lightness of the season at its most generous. Yellow, blush, fuchsia, and mint, rendered in translucent organza silk, move with the air and hold light the way spring flowers do. A collection that fills a space with quiet joy. Available to purchase or rent, effortless, and entirely its own.',
-        specs:['Height: 7–8 ft on a custom covered base','Width: 3–5 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+        detail:'The Spring Bloom captures the lightness of the season at its most generous. Yellow, blush, fuchsia, and mint, rendered in the finest materials, move with the air and hold light the way spring flowers do. A collection that fills a space with quiet joy. Available to purchase or rent, effortless, and entirely its own.',
+        specs:['Rental: C$899 per event','Height: 7–8 ft','Width: 3–5 ft across the full arrangement','Fully hypoallergenic','No maintenance required','Delivery and installation quoted separately'] },
       { num:'III', name:'The Coral Sonnet',         img:'img/moody-garden.jpg',
-        detail:'Rich in colour, deliberate in composition. The Coral Sonnet is warmth distilled into a single, unforgettable arrangement. A blush poppy and terracotta peony rise above cascading delphinium and ivory berry stems, with a delicate cosmos woven between, each stem crafted in premium organza silk, mounted on a covered base, and composed to stop anyone who passes it.',
-        specs:['Height: 7–8 ft on a custom covered base','Width: 3–4 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+        detail:'Rich in colour, deliberate in composition. The Coral Sonnet is warmth distilled into a single, unforgettable arrangement. A blush poppy and terracotta peony rise above cascading delphinium and ivory berry stems, with a delicate cosmos woven between, each stem crafted from the finest materials, mounted on a covered base, and composed to stop anyone who passes it.',
+        specs:['Rental: C$699 per event','Height: 7–8 ft','Width: 3–4 ft across the full arrangement','Fully hypoallergenic','No maintenance required','Delivery and installation quoted separately'] },
       { num:'IV',  name:'The Blush Drift',     img:'img/lavender-reverie.jpg',
-        detail:'The Blush Drift moves through a palette of soft lavender, dusty pink, and blush with the ease of something entirely natural. Soft lavender peonies, dusty rose peonies, pink cosmos, cascading delphinium, and delicate Queen Anne\'s lace, each stem individually handcrafted in premium organza silk. A composition that is tender in colour and generous in presence, mounted on a covered base and crafted to feel like the first light of morning, every single day.',
-        specs:['Height: 7–8 ft on a custom covered base','Width: 3–5 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+        detail:'The Blush Drift moves through a palette of soft lavender, dusty pink, and blush with the ease of something entirely natural. Soft lavender peonies, dusty rose peonies, pink cosmos, cascading delphinium, and delicate Queen Anne\'s lace, each stem individually handcrafted in premium materials. A composition that is tender in colour and generous in presence, mounted on a covered base and crafted to feel like the first light of morning, every single day.',
+        specs:['Rental: C$999 per event','Height: 7–8 ft','Width: 3–5 ft across the full arrangement','Fully hypoallergenic','No maintenance required','Delivery and installation quoted separately'] },
       { num:'V',   name:'The Pearl Vignette',          img:'img/grand-blanc.jpg',
-        detail:'The Pearl Vignette does not compete for attention. It simply deserves it. White peonies, a single blush poppy, airy Queen Anne\'s lace, and delicate berry stems, each handcrafted in premium organza silk and mounted on a covered base. A composition that is intimate in form and infinite in elegance, the kind of detail that tells your guests everything about the spaces you keep.',
-        specs:['Height: 7–8 ft on a custom covered base','Width: 3–4 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+        detail:'The Pearl Vignette does not compete for attention. It simply deserves it. White peonies, a single blush poppy, airy Queen Anne\'s lace, and delicate berry stems, each handcrafted in premium materials and mounted on a covered base. A composition that is intimate in form and infinite in elegance, the kind of detail that tells your guests everything about the spaces you keep.',
+        specs:['Rental: C$699 per event','Height: 7–8 ft','Width: 3–4 ft across the full arrangement','Fully hypoallergenic','No maintenance required','Delivery and installation quoted separately'] },
       { num:'VI',  name:'The Golden Portrait',         img:'img/golden-grove.jpg',
-        detail:'The Golden Portrait is confidence distilled into its purest form. A trio of oversized daffodils, each petal handcrafted in translucent golden organza silk, rise together in a composition that is as deliberate as it is breathtaking. Sunlit in colour, architectural in presence, and entirely unmistakable. For spaces that understand the power of doing one thing, and doing it beautifully.',
-        specs:['Height: 7–8 ft on a custom covered base','Width: 2–4 ft (expandable)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Available for purchase or rental'] },
+        detail:'The Golden Portrait is confidence distilled into its purest form. A trio of oversized daffodils, each petal handcrafted in the finest materials, rise together in a composition that is as deliberate as it is breathtaking. Sunlit in colour, architectural in presence, and entirely unmistakable. For spaces that understand the power of doing one thing, and doing it beautifully.',
+        specs:['Rental: C$549 per event','Height: 7–8 ft','Width: 2–4 ft across the full arrangement','Fully hypoallergenic','No maintenance required','Delivery and installation quoted separately'] },
       { num:'VII', name:'The Silk Ensemble', img:'img/full-bloom.jpg',
-        detail:'Some spaces deserve everything. The Silk Ensemble is a curated gathering of our most beloved blooms, composed in a palette that feels at once abundant and considered. Peonies, cosmos, delphinium, and the finest of fillers, each handcrafted in premium organza silk and woven together into a world entirely of their own.',
-        specs:['Height: 7–8 ft on a custom covered base','Width: 5–8 ft (fully custom)','Material: Premium organza silk','Fully hypoallergenic','No maintenance required','Custom composition — each piece unique','Available for purchase or rental'] }
+        detail:'Some spaces deserve everything. The Silk Ensemble is a curated gathering of our most beloved blooms, composed in a palette that feels at once abundant and considered. Peonies, cosmos, delphinium, and the finest of fillers, each handcrafted in premium materials and woven together into a world entirely of their own.',
+        specs:['Rental: C$1,599 per event','Height: 7–8 ft','Width: 5–8 ft across the full arrangement','Fully hypoallergenic','No maintenance required','Custom composition — each piece unique','Delivery and installation quoted separately'] }
     ];
 
     // Nav scroll
@@ -603,11 +588,16 @@
     const modal    = document.getElementById('modal');
     const backdrop = document.getElementById('modal-backdrop');
     const closeBtn = document.getElementById('modal-close');
+    const modalImg = document.getElementById('modal-img');
 
     function openModal(i) {
       const c = collections[i];
-      document.getElementById('modal-img').src        = c.img;
-      document.getElementById('modal-img').alt        = c.name;
+      modalImg.src    = c.img;
+      modalImg.alt    = c.name;
+      // Use contain for landscape images (Silk Ensemble)
+      if (i === 6) { modalImg.classList.add('contain'); } else { modalImg.classList.remove('contain'); }
+      // Golden Portrait — show full flower from top
+      modalImg.style.objectPosition = (i === 5) ? 'center top' : 'center center';
       document.getElementById('modal-num').textContent   = c.num;
       document.getElementById('modal-title').textContent = c.name;
       document.getElementById('modal-detail').textContent= c.detail;
