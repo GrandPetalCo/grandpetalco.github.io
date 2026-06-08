@@ -291,9 +291,26 @@
     @media (max-width: 560px) {
       .collections-grid { grid-template-columns: 1fr; }
       .card:last-child { aspect-ratio: 4/5; }
-      .modal { padding: 0; }
-      .modal-box { grid-template-columns: 1fr; max-height: 100vh; }
-      .modal-image { max-height: 45vh; }
+      .modal { padding: 0; align-items: stretch; justify-content: stretch; }
+      .modal-backdrop { position: fixed; inset: 0; }
+      .modal-box {
+        grid-template-columns: 1fr;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        transform: none !important;
+        border-radius: 0;
+      }
+      .modal-image { max-height: 50vw; min-height: 50vw; flex-shrink: 0; }
+      .modal-content {
+        max-height: none;
+        overflow-y: visible;
+        flex-shrink: 0;
+        padding: 2rem 1.75rem 5rem;
+      }
     }
   </style>
   <!-- Google tag (gtag.js) -->
@@ -660,7 +677,12 @@
       document.getElementById('modal-specs').innerHTML   = c.specs.map(s => `<li>${s}</li>`).join('');
       modal.classList.add('active');
       modal.setAttribute('aria-hidden','false');
-      document.body.style.overflow = 'hidden';
+      // iOS-safe scroll lock
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.dataset.scrollY = scrollY;
       // Push state so mobile back button closes modal instead of leaving page
       history.pushState({ modal: true, collection: i }, '', '#collection-' + i);
     }
@@ -668,7 +690,12 @@
     function closeModal() {
       modal.classList.remove('active');
       modal.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
+      // iOS-safe scroll unlock
+      const scrollY = parseInt(document.body.dataset.scrollY || '0');
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, scrollY);
       // If we pushed a state, go back without triggering popstate loop
       if (location.hash.startsWith('#collection-')) {
         history.replaceState(null, '', location.pathname);
@@ -680,12 +707,20 @@
       if (modal.classList.contains('active')) {
         modal.classList.remove('active');
         modal.setAttribute('aria-hidden','true');
-        document.body.style.overflow = '';
+        const scrollY = parseInt(document.body.dataset.scrollY || '0');
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollY);
       }
     });
 
     document.querySelectorAll('.card[data-collection]').forEach(card => {
       card.addEventListener('click', () => openModal(parseInt(card.dataset.collection)));
+      card.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        openModal(parseInt(card.dataset.collection));
+      }, { passive: false });
     });
 
     closeBtn.addEventListener('click', closeModal);
