@@ -701,6 +701,9 @@
       document.getElementById('modal-specs').innerHTML   = c.specs.map(s => `<li>${s}</li>`).join('');
       modal.classList.add('active');
       modal.setAttribute('aria-hidden','false');
+      // Reset modal scroll to top
+      const modalBox = document.querySelector('.modal-box');
+      modalBox.scrollTop = 0;
       // iOS-safe scroll lock
       const scrollY = window.scrollY;
       document.body.style.position = 'fixed';
