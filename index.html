@@ -778,7 +778,17 @@
       setTimeout(() => document.getElementById('inquire').scrollIntoView({ behavior:'smooth' }), 300);
     });
 
-    // AJAX form submission
+    // Open modal from URL hash on page load (for deep-linked email campaigns)
+    window.addEventListener('load', () => {
+      const hash = window.location.hash;
+      const match = hash.match(/^#collection-(\d+)$/);
+      if (match) {
+        const index = parseInt(match[1]);
+        if (index >= 0 && index < collections.length) {
+          setTimeout(() => openModal(index), 600);
+        }
+      }
+    });
     const inquireForm = document.getElementById('inquire-form');
     const formSuccess = document.getElementById('form-success');
     const formBtn    = document.getElementById('form-btn');
