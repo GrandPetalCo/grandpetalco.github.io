@@ -142,6 +142,29 @@
     }
 
     /* BANNER */
+    .holiday-banner {
+      position: relative; z-index: 201;
+      background: var(--black);
+      border-bottom: 1px solid rgba(196,169,106,0.22);
+      padding: 0.85rem 2rem;
+      display: flex; align-items: center; justify-content: center;
+      gap: 2rem; flex-wrap: wrap; text-align: center;
+    }
+    .holiday-banner p {
+      font-size: 0.78rem; letter-spacing: 0.1em; color: rgba(245,240,235,0.82);
+      line-height: 1.6;
+    }
+    .holiday-banner a {
+      display: inline-block; font-size: 0.68rem; letter-spacing: 0.16em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--black); background: var(--gold);
+      padding: 0.55rem 1.5rem; white-space: nowrap;
+      transition: background 0.3s ease;
+    }
+    .holiday-banner a:hover { background: #d4b97a; }
+    @media (max-width: 560px) {
+      .holiday-banner { flex-direction: column; gap: 0.85rem; padding: 1rem 1.5rem; }
+    }
 
     /* SHARED */
     section { padding: 8rem 4rem; }
@@ -367,6 +390,12 @@ document.head.appendChild(o)}initApollo();</script>
     </ul>
   </nav>
 
+  <!-- HOLIDAY BANNER -->
+  <div class="holiday-banner">
+    <p>Now booking holiday installations for November through January. We take on a limited number of installations each month.</p>
+    <a href="#inquire">Check holiday availability</a>
+  </div>
+
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-media">
@@ -406,61 +435,62 @@ document.head.appendChild(o)}initApollo();</script>
       <p class="section-label reveal">The Collections</p>
       <h2 class="section-heading reveal d1" style="max-width: 20ch;">Explore our collections. Every one a statement in silk.</h2>
       <p class="body-text reveal d2" style="max-width: 52ch; margin-top: 1.5rem; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.1rem;">Every Grand Petal Co. arrangement can be created to your vision. Whether you are drawn to one of our named collections or have a colour, a mood, or a space in mind, we will design something entirely your own. Your vision, your palette, your space, brought to life in the finest premium materials.</p>
+      <p class="reveal d3" style="margin-top: 2.5rem; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dark);">Seven signature collections, each available in holiday palettes. Every piece can be styled for fall and winter.</p>
     </div>
     <div class="collections-grid">
       <div class="card reveal" style="background-image:url('img/garden-reverie.jpg')" data-collection="0">
         <div class="card-inner">
           <span class="card-num">I</span>
-          <h3 class="card-title">The Garden Reverie</h3>
-          <p class="card-brief">Rich, generous, and gloriously warm. The warmth of a summer garden, captured in silk and crafted to be experienced.</p>
+          <h3 class="card-title">The Harvest Reverie</h3>
+          <p class="card-brief">Rich, generous, and gloriously warm. Amber peonies, poppies, and delphinium spires in the palette of the harvest season.</p>
           <span class="card-cta">View details →</span>
         </div>
       </div>
       <div class="card reveal d1" style="background-image:url('img/wildflower-meadow.jpg')" data-collection="1">
         <div class="card-inner">
           <span class="card-num">II</span>
-          <h3 class="card-title">The Spring Bloom</h3>
-          <p class="card-brief">Sun-kissed and effortlessly light. A season in full drift, anchored by a peony caught mid-bloom.</p>
+          <h3 class="card-title">The Winter Bloom</h3>
+          <p class="card-brief">Light-catching and quietly joyful. Blush, fuchsia, and mint, made to hold light the way winter sun does.</p>
           <span class="card-cta">View details →</span>
         </div>
       </div>
       <div class="card reveal d2" style="background-image:url('img/moody-garden.jpg')" data-collection="2">
         <div class="card-inner">
           <span class="card-num">III</span>
-          <h3 class="card-title">The Coral Sonnet</h3>
-          <p class="card-brief">Rich in colour, deliberate in composition. The Coral Sonnet is warmth distilled into a single, unforgettable arrangement.</p>
+          <h3 class="card-title">The Autumn Sonnet</h3>
+          <p class="card-brief">Rich in colour, deliberate in composition. Terracotta and blush distilled into a single, unforgettable arrangement.</p>
           <span class="card-cta">View details →</span>
         </div>
       </div>
       <div class="card reveal" style="background-image:url('img/lavender-reverie.jpg')" data-collection="3">
         <div class="card-inner">
           <span class="card-num">IV</span>
-          <h3 class="card-title">The Blush Drift</h3>
-          <p class="card-brief">Soft, romantic, and quietly luminous. A palette of blush, lavender, and dusty pink that feels like the first light of morning.</p>
+          <h3 class="card-title">The Frost Drift</h3>
+          <p class="card-brief">Soft, romantic, and quietly luminous. Blush, lavender, and dusty pink like first light on fresh snow.</p>
           <span class="card-cta">View details →</span>
         </div>
       </div>
       <div class="card reveal d1" style="background-image:url('img/grand-blanc.jpg');background-position:top center" data-collection="4">
         <div class="card-inner">
           <span class="card-num">V</span>
-          <h3 class="card-title">The Pearl Vignette</h3>
-          <p class="card-brief">Perfectly composed in pearl and blush. Every stem placed with intention, every petal worth lingering over.</p>
+          <h3 class="card-title">The Winter Vignette</h3>
+          <p class="card-brief">Perfectly composed in pearl and blush. White peonies and winter berries, every stem placed with intention.</p>
           <span class="card-cta">View details →</span>
         </div>
       </div>
       <div class="card reveal d2" style="background-image:url('img/golden-grove.jpg')" data-collection="5">
         <div class="card-inner">
           <span class="card-num">VI</span>
-          <h3 class="card-title">The Golden Portrait</h3>
-          <p class="card-brief">Sunlit and singular. The Golden Portrait is a trio of daffodils at their most refined, and their most beautiful.</p>
+          <h3 class="card-title">The Golden Hour</h3>
+          <p class="card-brief">A trio of golden daffodils, refined and unmistakable. Warmth and light for the darkest months.</p>
           <span class="card-cta">View details →</span>
         </div>
       </div>
       <div class="card reveal" style="background-image:url('img/full-bloom.jpg');background-position:center top;background-size:cover;" data-collection="6">
         <div class="card-inner">
           <span class="card-num">VII</span>
-          <h3 class="card-title">The Silk Ensemble</h3>
-          <p class="card-brief">A curated gathering of our finest blooms, each handcrafted and every arrangement uniquely composed.</p>
+          <h3 class="card-title">The Grand Ensemble</h3>
+          <p class="card-brief">Our most abundant composition, gathered for the season of gathering. Peonies, cosmos, and delphinium at full scale.</p>
           <span class="card-cta">View details →</span>
         </div>
       </div>
@@ -487,14 +517,14 @@ document.head.appendChild(o)}initApollo();</script>
           <span class="serve-dot"></span>
           <div>
             <span class="serve-title">Hospitality, Retail &amp; Luxury Destinations</span>
-            <span class="serve-desc">Every great destination has something that makes it feel unlike anywhere else. We bring presence to hotels, restaurants, private clubs, wellness destinations, boutiques, showrooms, and galleries — installations that draw people in, slow them down, and make every visit feel considered.</span>
+            <span class="serve-desc">Every great destination has something that makes it feel unlike anywhere else. We bring presence to hotels, restaurants, private clubs, wellness destinations, boutiques, showrooms, and galleries — installations that draw people in, slow them down, and make every visit feel considered. Holiday lobbies, winter terraces, and New Year receptions.</span>
           </div>
         </li>
         <li class="serve-item">
           <span class="serve-dot"></span>
           <div>
             <span class="serve-title">Corporate &amp; Professional Spaces</span>
-            <span class="serve-desc">The spaces where your culture lives deserve to reflect it. We create installations that communicate the values, culture, and quiet confidence of the organizations behind them, without saying a word.</span>
+            <span class="serve-desc">The spaces where your culture lives deserve to reflect it. We create installations that communicate the values, culture, and quiet confidence of the organizations behind them, without saying a word. This season: holiday installations for lobbies, parties, and receptions.</span>
           </div>
         </li>
         <li class="serve-item">
@@ -522,7 +552,7 @@ document.head.appendChild(o)}initApollo();</script>
         <p class="section-label">The Craft</p>
         <div class="thin-rule"></div>
         <h2 class="section-heading">Made by hand.<br>Crafted with intention.</h2>
-        <p class="body-text">Grand Petal Co. was built on the belief that exceptional spaces deserve exceptional craft. Every bloom is shaped individually from premium materials, a material chosen for its luminous quality, its natural movement, and its ability to hold light the way real petals do. The result is an arrangement that arrives ready to elevate any space it enters, available to purchase or rent. No allergens. No maintenance. Only a work of craft, present for every person who moves through your space, and worthy of every glance it receives.</p>
+        <p class="body-text">Grand Petal Co. was built on the belief that exceptional spaces deserve exceptional craft. Every bloom is shaped individually from premium materials, a material chosen for its luminous quality, its natural movement, and its ability to hold light the way real petals do. The result is an arrangement that arrives ready to elevate any space it enters, available to rent, with select pieces available to purchase. No allergens. No maintenance. Only a work of craft, present for every person who moves through your space, and worthy of every glance it receives.</p>
         <p class="detail-text" style="margin-top:1rem">Based in Waterloo Region, serving Kitchener, Waterloo, and Cambridge. Available throughout the Greater Toronto Area and across Ontario. Extended travel available province-wide — contact us to discuss your location.</p>
       </div>
       <div class="craft-image reveal d1">
@@ -537,8 +567,8 @@ document.head.appendChild(o)}initApollo();</script>
     <div class="form-inner">
       <div class="reveal">
         <p class="section-label">Check Availability</p>
-        <h2 class="form-heading">Let us design<br>for your space.</h2>
-        <p class="form-sub">Tell us about your space and we will be in touch within two business days.</p>
+        <h2 class="form-heading">Let's design your<br>holiday installation.</h2>
+        <p class="form-sub">Tell us about your event or space and your dates. We will be in touch within one business day.</p>
         <p class="form-sub" style="margin-top: 1.25rem; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.2rem; color: rgba(196,180,154,0.8);">Every arrangement we create can be tailored to your space and your vision. Come to us with a collection you love, or an idea entirely your own, and we will bring it to life.</p>
         <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem;">
           <a href="tel:6477661642" style="font-size:0.82rem; letter-spacing:0.1em; color:#C4A96A; text-decoration:none; text-transform:uppercase;">Call Monica — 647 766 1642</a>
@@ -566,32 +596,18 @@ document.head.appendChild(o)}initApollo();</script>
           <div class="form-submit full">
             <button type="submit" class="btn" id="form-btn">Send Inquiry</button>
           </div>
-          <p class="form-note">Every inquiry is personal to us. We will be in touch within two business days.</p>
+          <p class="form-note">Every inquiry is personal to us. We will be in touch within one business day.</p>
+          <p class="form-note" style="margin-top: 0.5rem; font-style: italic;">Holiday dates are reserved with a deposit. Consultations are always free.</p>
         </form>
 
         <div id="form-success" style="display:none; text-align:center; padding: 4rem 2rem;">
           <div style="width:36px; height:1px; background:#C4A96A; margin:0 auto 2rem;"></div>
           <p style="font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; font-size:clamp(1.8rem,4vw,2.6rem); font-weight:300; color:#F5F0EB; line-height:1.3; margin-bottom:1.5rem;">Thank you for reaching out.</p>
-          <p style="font-size:0.9rem; color:#C4B49A; line-height:1.9; max-width:360px; margin:0 auto 2.5rem;">We have received your enquiry and will be in touch within two business days to discuss your space, timeline, and delivery details.</p>
+          <p style="font-size:0.9rem; color:#C4B49A; line-height:1.9; max-width:360px; margin:0 auto 2.5rem;">We have received your enquiry and will be in touch within one business day to discuss your space, timeline, and delivery details.</p>
           <a href="#collections" class="btn-dark" style="font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; color:#1A1A1A; background:#C4A96A; padding:1rem 2.5rem;">Explore Collections</a>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- INSTAGRAM -->
-  <section style="padding: 5rem 2rem; text-align: center; background: var(--cream);">
-    <p class="section-label" style="text-align:center;">Follow The Work</p>
-    <div class="thin-rule" style="margin: 1rem auto 1.5rem;"></div>
-    <p style="font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; font-size:clamp(1.6rem,3vw,2.2rem); font-weight:300; color:var(--black); margin-bottom:2rem; line-height:1.3;">See every installation as it comes to life.</p>
-    <a href="https://www.instagram.com/grandpetalco/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.75rem; font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; color:var(--black); background:var(--gold); padding:1rem 2.5rem; transition: background 0.3s;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-        <circle cx="12" cy="12" r="4"/>
-        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
-      </svg>
-      @grandpetalco
-    </a>
   </section>
 
   <!-- FOOTER -->
@@ -634,26 +650,26 @@ document.head.appendChild(o)}initApollo();</script>
 
   <script>
     const collections = [
-      { num:'I',   name:'The Garden Reverie',       img:'img/garden-reverie.jpg',
-        detail:'Garden Reverie is our signature warm-toned collection. A breathtaking arrangement of oversized hand-crafted silk florals standing 7 ft tall. Each stem is individually crafted from premium materials, featuring billowing peonies, open-faced poppies, delicate cosmos, airy Queen Anne\'s lace, and cascading delphinium spires, all mounted on covered bases. Available in our signature warm palette, it can be customized to your event\'s colours on request.',
+      { num:'I',   name:'The Harvest Reverie',       img:'img/garden-reverie.jpg',
+        detail:'The Harvest Reverie is our signature warm-toned collection. A breathtaking arrangement of oversized hand-crafted silk florals standing 7 ft tall. Billowing peonies, open-faced poppies, delicate cosmos, airy Queen Anne\'s lace, and cascading delphinium spires in amber, terracotta, and gold, all mounted on covered bases. A natural fit for fall and holiday settings, available in custom palettes on request.',
         specs:['Rental: C$1,099 per event','Height: 7 ft','Width: 4–5 ft across the full arrangement','Fully hypoallergenic','No maintenance required'] },
-      { num:'II',  name:'The Spring Bloom',    img:'img/wildflower-meadow.jpg',
-        detail:'The Spring Bloom captures the lightness of the season at its most generous. Yellow, blush, fuchsia, and mint, rendered in the finest materials, move with the air and hold light the way spring flowers do. A collection that fills a space with quiet joy. Available to purchase or rent, effortless, and entirely its own.',
+      { num:'II',  name:'The Winter Bloom',    img:'img/wildflower-meadow.jpg',
+        detail:'The Winter Bloom captures lightness at its most generous. Yellow, blush, fuchsia, and mint, rendered in the finest materials, move with the air and catch light the way winter sun does. A collection that fills a space with quiet joy through the darkest months. Available to purchase or rent, effortless, and entirely its own.',
         specs:['Rental: C$899 per event','Height: 7–8 ft','Width: 3–5 ft across the full arrangement','Fully hypoallergenic','No maintenance required'] },
-      { num:'III', name:'The Coral Sonnet',         img:'img/moody-garden.jpg',
-        detail:'Rich in colour, deliberate in composition. The Coral Sonnet is warmth distilled into a single, unforgettable arrangement. A blush poppy and terracotta peony rise above cascading delphinium and ivory berry stems, with a delicate cosmos woven between, each stem crafted from the finest materials, mounted on a covered base, and composed to stop anyone who passes it.',
+      { num:'III', name:'The Autumn Sonnet',         img:'img/moody-garden.jpg',
+        detail:'Rich in colour, deliberate in composition. The Autumn Sonnet is the season distilled into a single, unforgettable arrangement. A blush poppy and terracotta peony rise above cascading delphinium and ivory berry stems, with a delicate cosmos woven between, each stem crafted from the finest materials, mounted on a covered base, and composed to stop anyone who passes it.',
         specs:['Rental: C$699 per event','Height: 7–8 ft','Width: 3–4 ft across the full arrangement','Fully hypoallergenic','No maintenance required'] },
-      { num:'IV',  name:'The Blush Drift',     img:'img/lavender-reverie.jpg',
-        detail:'The Blush Drift moves through a palette of soft lavender, dusty pink, and blush with the ease of something entirely natural. Soft lavender peonies, dusty rose peonies, pink cosmos, cascading delphinium, and delicate Queen Anne\'s lace, each stem individually handcrafted in premium materials. A composition that is tender in colour and generous in presence, mounted on a covered base and crafted to feel like the first light of morning, every single day.',
+      { num:'IV',  name:'The Frost Drift',     img:'img/lavender-reverie.jpg',
+        detail:'The Frost Drift moves through a palette of soft lavender, dusty pink, and blush with the ease of something entirely natural. Soft lavender peonies, dusty rose peonies, pink cosmos, cascading delphinium, and delicate Queen Anne\'s lace, each stem individually handcrafted in premium materials. A composition tender in colour and generous in presence, mounted on a covered base and crafted to feel like first light on fresh snow, every single day.',
         specs:['Rental: C$999 per event','Height: 7–8 ft','Width: 3–5 ft across the full arrangement','Fully hypoallergenic','No maintenance required'] },
-      { num:'V',   name:'The Pearl Vignette',          img:'img/grand-blanc.jpg',
-        detail:'The Pearl Vignette does not compete for attention. It simply deserves it. White peonies, a single blush poppy, airy Queen Anne\'s lace, and delicate berry stems, each handcrafted in premium materials and mounted on a covered base. A composition that is intimate in form and infinite in elegance, the kind of detail that tells your guests everything about the spaces you keep.',
+      { num:'V',   name:'The Winter Vignette',          img:'img/grand-blanc.jpg',
+        detail:'The Winter Vignette does not compete for attention. It simply deserves it. White peonies, a single blush poppy, airy Queen Anne\'s lace, and delicate berry stems, each handcrafted in premium materials and mounted on a covered base. A composition intimate in form and infinite in elegance, made for winter weddings and holiday spaces that speak quietly.',
         specs:['Rental: C$699 per event','Height: 7–8 ft','Width: 3–4 ft across the full arrangement','Fully hypoallergenic','No maintenance required'] },
-      { num:'VI',  name:'The Golden Portrait',         img:'img/golden-grove.jpg',
-        detail:'The Golden Portrait is confidence distilled into its purest form. A trio of oversized daffodils, each petal handcrafted in the finest materials, rise together in a composition that is as deliberate as it is breathtaking. Sunlit in colour, architectural in presence, and entirely unmistakable. For spaces that understand the power of doing one thing, and doing it beautifully.',
+      { num:'VI',  name:'The Golden Hour',         img:'img/golden-grove.jpg',
+        detail:'The Golden Hour is confidence distilled into its purest form. A trio of oversized golden daffodils, each petal handcrafted in the finest materials, rise together in a composition as deliberate as it is breathtaking. Warm in colour, architectural in presence, and entirely unmistakable. Made for the glow of holiday rooms and spaces that understand the power of doing one thing beautifully.',
         specs:['Rental: C$549 per event','Height: 7–8 ft','Width: 2–4 ft across the full arrangement','Fully hypoallergenic','No maintenance required'] },
-      { num:'VII', name:'The Silk Ensemble', img:'img/full-bloom.jpg',
-        detail:'Some spaces deserve everything. The Silk Ensemble is a curated gathering of our most beloved blooms, composed in a palette that feels at once abundant and considered. Peonies, cosmos, delphinium, and the finest of fillers, each handcrafted in premium materials and woven together into a world entirely of their own.',
+      { num:'VII', name:'The Grand Ensemble', img:'img/full-bloom.jpg',
+        detail:'Some spaces deserve everything. The Grand Ensemble is a curated gathering of our most beloved blooms, composed in a palette that feels at once abundant and considered. Peonies, cosmos, delphinium, and the finest of fillers, each handcrafted in premium materials and woven together into a world entirely of their own. Our flagship for grand holiday statements.',
         specs:['Rental: C$1,599 per event','Height: 7–8 ft','Width: 5–8 ft across the full arrangement','Fully hypoallergenic','No maintenance required','Custom composition — each piece unique'] }
     ];
 
